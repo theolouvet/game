@@ -1,0 +1,3 @@
+/home/thep/Documents/newgameproject/CMakeFiles/rebuild_cache.dir
+/home/thep/Documents/newgameproject/CMakeFiles/pgm.dir
+/home/thep/Documents/newgameproject/CMakeFiles/edit_cache.dir
