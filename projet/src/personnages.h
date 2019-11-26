@@ -17,7 +17,11 @@ public:
     Personnages();
     ic::vector3df getPosition();
     ic::vector3df getRotation();
+    void run();
+    void stand();
     is::IAnimatedMeshSceneNode* node;
+    int state = is::EMAT_STAND;
+    void addcolision(is::ITriangleSelector*, is::ISceneManager*);
     
 private:
     int pdv;

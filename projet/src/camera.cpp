@@ -27,6 +27,7 @@ void Camera::initiateTPScam(is::IAnimatedMeshSceneNode* node){
     cam = camsmgr->addCameraSceneNode(0,pos, node->getPosition() + relatifTarget);
     camsmgr->setActiveCamera(cam);
     ActiveId = IdTps;
+    TPS = true;
 }
 
 void Camera::initiateFPScam(is::IAnimatedMeshSceneNode* node){
@@ -55,7 +56,7 @@ void Camera::initiateFPScam(is::IAnimatedMeshSceneNode* node){
     camFPS->setPosition(pos+ ic::vector3df(-1,25,0));
     camFPS->setTarget(pos);
 
-
+    FPS = true;
     ActiveId = IdFps;
 }
 
@@ -65,6 +66,7 @@ void Camera::initiateMayacam(is::IAnimatedMeshSceneNode* node){
     camMaya->setTarget(node->getPosition());
     camsmgr->setActiveCamera(camMaya);
     ActiveId = IdMaya;
+    MAYA = true;
 }
 
 
@@ -114,25 +116,32 @@ void Camera::updateFPScam(is::IAnimatedMeshSceneNode* node){
 
 void Camera::switchView(){
     std::cout<<0<<std::endl;
-    switch (ActiveId)
-    {
-    case IdFps:
-        std::cout<<0<<std::endl;
-        ActiveId = IdMaya;
-        break;
-    case IdMaya:
-        std::cout<<0<<std::endl;
-        ActiveId = IdTps;
-        break;
-    case IdTps:
-        std::cout<<0<<std::endl;
-        ActiveId = IdFps;
-        break;
-
-    default:
-        break;
+    if(FPS && TPS && MAYA){
+        std::cout<<"initialiser une camera"<<std::endl;
+    }else{
+        switch (ActiveId)
+            {
+            case IdFps:
+                std::cout<<MAYA<<std::endl;
+                ActiveId = IdMaya;
+                if(MAYA)
+                    break;
+            case IdMaya:
+                std::cout<<0<<std::endl;
+                ActiveId = IdTps;
+                if(TPS)
+                    break;
+            case IdTps:
+                std::cout<<0<<std::endl;
+                ActiveId = IdFps;
+                if(FPS)
+                    break;
+            default:
+                std::cout<<"default"<<std::endl;
+                break;
+            }
+        switchcamtype(ActiveId);
     }
-    switchcamtype(ActiveId);
 }
 
 ic::vector3df Camera::getPosition(){ return cam->getAbsolutePosition(); };

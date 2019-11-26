@@ -34,6 +34,8 @@ public:
     ism::ISceneManager* camsmgr;
 
     bool FPS = false;
+    bool MAYA = false;
+    bool TPS = false;
     int ActiveId = -1;
     const static int IdFps = 0;
     const static int IdTps = 1;

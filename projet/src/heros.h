@@ -15,6 +15,9 @@ public:
     void turnleft();
     void turnright(ic::vector3df);
     void turnleft(ic::vector3df);
+    void animation(bool);
+
+ 
 };
 
 #endif // HEROS_H
