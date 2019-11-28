@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/thep/Documents/newgameproject/projet/src/camera.cpp" "/home/thep/Documents/newgameproject/CMakeFiles/pgm.dir/projet/src/camera.cpp.o"
-  "/home/thep/Documents/newgameproject/projet/src/heros.cpp" "/home/thep/Documents/newgameproject/CMakeFiles/pgm.dir/projet/src/heros.cpp.o"
-  "/home/thep/Documents/newgameproject/projet/src/main.cpp" "/home/thep/Documents/newgameproject/CMakeFiles/pgm.dir/projet/src/main.cpp.o"
-  "/home/thep/Documents/newgameproject/projet/src/myeventreceiver.cpp" "/home/thep/Documents/newgameproject/CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o"
-  "/home/thep/Documents/newgameproject/projet/src/personnages.cpp" "/home/thep/Documents/newgameproject/CMakeFiles/pgm.dir/projet/src/personnages.cpp.o"
+  "/home/thep/Documents/game/projet/src/camera.cpp" "/home/thep/Documents/game/CMakeFiles/pgm.dir/projet/src/camera.cpp.o"
+  "/home/thep/Documents/game/projet/src/heros.cpp" "/home/thep/Documents/game/CMakeFiles/pgm.dir/projet/src/heros.cpp.o"
+  "/home/thep/Documents/game/projet/src/main.cpp" "/home/thep/Documents/game/CMakeFiles/pgm.dir/projet/src/main.cpp.o"
+  "/home/thep/Documents/game/projet/src/myeventreceiver.cpp" "/home/thep/Documents/game/CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o"
+  "/home/thep/Documents/game/projet/src/personnages.cpp" "/home/thep/Documents/game/CMakeFiles/pgm.dir/projet/src/personnages.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

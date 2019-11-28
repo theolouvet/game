@@ -18,18 +18,20 @@ ISceneManager* smgr ;
 IrrlichtDevice *device;
 Camera cam;
 MyEventReceiver receiver;
+irr::SKeyMap keyMap[5];
 Heros sydney;
 bool ani = false;
 bool keyrelease = true;
+bool freecam = false;
 
 void keyreception(){
     
   
-    if(receiver.IsKeyDown(KEY_KEY_P) ){
+    if(receiver.IsKeyDown(KEY_KEY_P) && !freecam ){
         keyrelease =! keyrelease;
         cam.switchView();
     }
-    else{
+    else if(!freecam){
         if(receiver.IsKeyDown(KEY_KEY_Z)){
             sydney.avancer();
             cam.updateCamera(&sydney);
@@ -55,6 +57,29 @@ void keyreception(){
         }else
         {
             sydney.stand();
+        }
+
+        if(receiver.IsKeyDown(KEY_KEY_M) && !freecam){
+            freecam = true;
+            keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
+            keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
+            keyMap[1].Action = irr::EKA_MOVE_BACKWARD; // reculer
+            keyMap[1].KeyCode = irr::KEY_KEY_S;        // s
+            keyMap[2].Action = irr::EKA_STRAFE_LEFT;   // a gauche
+            keyMap[2].KeyCode = irr::KEY_KEY_A;        // a
+            keyMap[3].Action = irr::EKA_STRAFE_RIGHT;  // a droite
+            keyMap[3].KeyCode = irr::KEY_KEY_D;        // d
+            keyMap[4].Action = irr::EKA_JUMP_UP;       // saut
+            keyMap[4].KeyCode = irr::KEY_SPACE;        // barre espace
+            ICameraSceneNode* camfree =  smgr->addCameraSceneNodeFPS(
+                    0,
+            100,
+            10.0f,
+            -1,
+            0,//keymap
+            5
+            );
+            camfree->setFarValue(30000.0f);
         }
         
         
@@ -108,71 +133,7 @@ int main(){
     cam.cam->setParent(sydney.node);
 
 
-     /*terraingen terrain = terraingen(smgr);
-    terrain.initTexture(driver->getTexture("media/terrain-texture.jpg"),  driver->getTexture("media/detailmap3.jpg"));
-    terrain.setTerrainSelector(smgr->createTerrainTriangleSelector(terrain.terrain, 0));
-    terrain.createAnimator(smgr, cam.cam);
-*/
-
-    // add terrain scene node
-    scene::ITerrainSceneNode* terrain = smgr->addTerrainSceneNode(
-        "media/terrain-heightmap.bmp",
-        0,                  // parent node
-        -1,                 // node id
-        core::vector3df(0.f,-550.f, 0.f),     // position
-        core::vector3df(0.f, 0.f, 0.f),     // rotation
-        core::vector3df(40.f, 4.4f, 40.f),  // scale
-        video::SColor ( 255, 255, 255, 255 ),   // vertexColor
-        5,                  // maxLOD
-        scene::ETPS_17,             // patchSize
-        4                   // smoothFactor
-        );
-
-    terrain->setMaterialFlag(video::EMF_LIGHTING, false);
-
-    terrain->setMaterialTexture(0,
-            driver->getTexture("media/terrain-texture.jpg"));
-    terrain->setMaterialTexture(1,
-            driver->getTexture("media/detailmap3.jpg"));
-
-    terrain->setMaterialType(video::EMT_DETAIL_MAP);
-
-    terrain->scaleTexture(1.0f, 20.0f);
-
-    // create triangle selector for the terrain
-       scene::ITriangleSelector* selector
-           = smgr->createTerrainTriangleSelector(terrain, 0);
-       terrain->setTriangleSelector(selector);
-
-       // create collision response animator and attach it to the camera
-       scene::ISceneNodeAnimator* anim = smgr->createCollisionResponseAnimator(
-           selector, cam.cam, core::vector3df(60,100,60),
-           core::vector3df(0,0,0),
-           core::vector3df(0,50,0));
-       selector->drop();
-       cam.cam->addAnimator(anim);
-       anim->drop();
-       scene::CDynamicMeshBuffer* buffer = new scene::CDynamicMeshBuffer(video::EVT_2TCOORDS, video::EIT_16BIT);
-       terrain->getMeshBufferForLOD(*buffer, 0);
-       video::S3DVertex2TCoords* data = (video::S3DVertex2TCoords*)buffer->getVertexBuffer().getData();
-       // Work on data or get the IndexBuffer with a similar call.
-       buffer->drop(); // When done drop the buffer again.
-       // create skybox and skydome
-       driver->setTextureCreationFlag(video::ETCF_CREATE_MIP_MAPS, false);
-
-       scene::ISceneNode* skybox=smgr->addSkyBoxSceneNode(
-           driver->getTexture("media/irrlicht2_up.jpg"),
-           driver->getTexture("media/irrlicht2_dn.jpg"),
-           driver->getTexture("media/irrlicht2_lf.jpg"),
-           driver->getTexture("media/irrlicht2_rt.jpg"),
-           driver->getTexture("media/irrlicht2_ft.jpg"),
-           driver->getTexture("media/irrlicht2_bk.jpg"));
-       scene::ISceneNode* skydome=smgr->addSkyDomeSceneNode(driver->getTexture("media/skydome.jpg"),16,8,0.95f,2.0f);
-
-       driver->setTextureCreationFlag(video::ETCF_CREATE_MIP_MAPS, true);
-
-        sydney.addcolision(selector, smgr);
-
+   
 
     int lastFPS = -1;
     

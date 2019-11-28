@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/thep/Documents/newgameproject
+CMAKE_SOURCE_DIR = /home/thep/Documents/game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/thep/Documents/newgameproject
+CMAKE_BINARY_DIR = /home/thep/Documents/game
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pgm.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/pgm.dir/flags.make
 
 CMakeFiles/pgm.dir/projet/src/camera.cpp.o: CMakeFiles/pgm.dir/flags.make
 CMakeFiles/pgm.dir/projet/src/camera.cpp.o: projet/src/camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/newgameproject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pgm.dir/projet/src/camera.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/camera.cpp.o -c /home/thep/Documents/newgameproject/projet/src/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pgm.dir/projet/src/camera.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/camera.cpp.o -c /home/thep/Documents/game/projet/src/camera.cpp
 
 CMakeFiles/pgm.dir/projet/src/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pgm.dir/projet/src/camera.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/newgameproject/projet/src/camera.cpp > CMakeFiles/pgm.dir/projet/src/camera.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/game/projet/src/camera.cpp > CMakeFiles/pgm.dir/projet/src/camera.cpp.i
 
 CMakeFiles/pgm.dir/projet/src/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pgm.dir/projet/src/camera.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/newgameproject/projet/src/camera.cpp -o CMakeFiles/pgm.dir/projet/src/camera.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/game/projet/src/camera.cpp -o CMakeFiles/pgm.dir/projet/src/camera.cpp.s
 
 CMakeFiles/pgm.dir/projet/src/camera.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/pgm.dir/projet/src/camera.cpp.o.provides.build: CMakeFiles/pgm.dir/pr
 
 CMakeFiles/pgm.dir/projet/src/heros.cpp.o: CMakeFiles/pgm.dir/flags.make
 CMakeFiles/pgm.dir/projet/src/heros.cpp.o: projet/src/heros.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/newgameproject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pgm.dir/projet/src/heros.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/heros.cpp.o -c /home/thep/Documents/newgameproject/projet/src/heros.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/pgm.dir/projet/src/heros.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/heros.cpp.o -c /home/thep/Documents/game/projet/src/heros.cpp
 
 CMakeFiles/pgm.dir/projet/src/heros.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pgm.dir/projet/src/heros.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/newgameproject/projet/src/heros.cpp > CMakeFiles/pgm.dir/projet/src/heros.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/game/projet/src/heros.cpp > CMakeFiles/pgm.dir/projet/src/heros.cpp.i
 
 CMakeFiles/pgm.dir/projet/src/heros.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pgm.dir/projet/src/heros.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/newgameproject/projet/src/heros.cpp -o CMakeFiles/pgm.dir/projet/src/heros.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/game/projet/src/heros.cpp -o CMakeFiles/pgm.dir/projet/src/heros.cpp.s
 
 CMakeFiles/pgm.dir/projet/src/heros.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/pgm.dir/projet/src/heros.cpp.o.provides.build: CMakeFiles/pgm.dir/pro
 
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: CMakeFiles/pgm.dir/flags.make
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/newgameproject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pgm.dir/projet/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/main.cpp.o -c /home/thep/Documents/newgameproject/projet/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/pgm.dir/projet/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/main.cpp.o -c /home/thep/Documents/game/projet/src/main.cpp
 
 CMakeFiles/pgm.dir/projet/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pgm.dir/projet/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/newgameproject/projet/src/main.cpp > CMakeFiles/pgm.dir/projet/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/game/projet/src/main.cpp > CMakeFiles/pgm.dir/projet/src/main.cpp.i
 
 CMakeFiles/pgm.dir/projet/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pgm.dir/projet/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/newgameproject/projet/src/main.cpp -o CMakeFiles/pgm.dir/projet/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/game/projet/src/main.cpp -o CMakeFiles/pgm.dir/projet/src/main.cpp.s
 
 CMakeFiles/pgm.dir/projet/src/main.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/pgm.dir/projet/src/main.cpp.o.provides.build: CMakeFiles/pgm.dir/proj
 
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o: CMakeFiles/pgm.dir/flags.make
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o: projet/src/myeventreceiver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/newgameproject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o -c /home/thep/Documents/newgameproject/projet/src/myeventreceiver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o -c /home/thep/Documents/game/projet/src/myeventreceiver.cpp
 
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/newgameproject/projet/src/myeventreceiver.cpp > CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/game/projet/src/myeventreceiver.cpp > CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.i
 
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/newgameproject/projet/src/myeventreceiver.cpp -o CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/game/projet/src/myeventreceiver.cpp -o CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.s
 
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o.provides.build: CMakeFiles/p
 
 CMakeFiles/pgm.dir/projet/src/personnages.cpp.o: CMakeFiles/pgm.dir/flags.make
 CMakeFiles/pgm.dir/projet/src/personnages.cpp.o: projet/src/personnages.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/newgameproject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pgm.dir/projet/src/personnages.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/personnages.cpp.o -c /home/thep/Documents/newgameproject/projet/src/personnages.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pgm.dir/projet/src/personnages.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/personnages.cpp.o -c /home/thep/Documents/game/projet/src/personnages.cpp
 
 CMakeFiles/pgm.dir/projet/src/personnages.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pgm.dir/projet/src/personnages.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/newgameproject/projet/src/personnages.cpp > CMakeFiles/pgm.dir/projet/src/personnages.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/game/projet/src/personnages.cpp > CMakeFiles/pgm.dir/projet/src/personnages.cpp.i
 
 CMakeFiles/pgm.dir/projet/src/personnages.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pgm.dir/projet/src/personnages.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/newgameproject/projet/src/personnages.cpp -o CMakeFiles/pgm.dir/projet/src/personnages.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/game/projet/src/personnages.cpp -o CMakeFiles/pgm.dir/projet/src/personnages.cpp.s
 
 CMakeFiles/pgm.dir/projet/src/personnages.cpp.o.requires:
 
@@ -195,7 +195,7 @@ pgm: CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o
 pgm: CMakeFiles/pgm.dir/projet/src/personnages.cpp.o
 pgm: CMakeFiles/pgm.dir/build.make
 pgm: CMakeFiles/pgm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thep/Documents/newgameproject/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable pgm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable pgm"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pgm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -216,6 +216,6 @@ CMakeFiles/pgm.dir/clean:
 .PHONY : CMakeFiles/pgm.dir/clean
 
 CMakeFiles/pgm.dir/depend:
-	cd /home/thep/Documents/newgameproject && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thep/Documents/newgameproject /home/thep/Documents/newgameproject /home/thep/Documents/newgameproject /home/thep/Documents/newgameproject /home/thep/Documents/newgameproject/CMakeFiles/pgm.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/thep/Documents/game && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/thep/Documents/game /home/thep/Documents/game /home/thep/Documents/game /home/thep/Documents/game /home/thep/Documents/game/CMakeFiles/pgm.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/pgm.dir/depend
 

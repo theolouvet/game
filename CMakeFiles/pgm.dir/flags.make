@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -O2 -std=c++11 -Wno-comment -Wno-unused-function
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/thep/Documents/newgameproject/projet/src -I/usr/include/irrlicht 
+CXX_INCLUDES = -I/home/thep/Documents/game/projet/src -I/usr/include/irrlicht 
 
