@@ -28,8 +28,8 @@ bool freecam = false;
 float t;
 scene::ISceneNode* skydome;
 core::vector3df ligth = vector3df(-5000,5000,14000);
-
-
+IVideoDriver* driver;
+ICameraSceneNode* camfree;
 
 
 class MyShaderCallBack2 : public video::IShaderConstantSetCallBack
@@ -85,17 +85,6 @@ private:
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
 void keyreception(){
     
   
@@ -131,27 +120,9 @@ void keyreception(){
             sydney.stand();
         }
 
-        if(receiver.IsKeyDown(KEY_KEY_M) && !freecam){
-            freecam = true;
-            keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
-            keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
-            keyMap[1].Action = irr::EKA_MOVE_BACKWARD; // reculer
-            keyMap[1].KeyCode = irr::KEY_KEY_S;        // s
-            keyMap[2].Action = irr::EKA_STRAFE_LEFT;   // a gauche
-            keyMap[2].KeyCode = irr::KEY_KEY_A;        // a
-            keyMap[3].Action = irr::EKA_STRAFE_RIGHT;  // a droite
-            keyMap[3].KeyCode = irr::KEY_KEY_D;        // d
-            keyMap[4].Action = irr::EKA_JUMP_UP;       // saut
-            keyMap[4].KeyCode = irr::KEY_SPACE;        // barre espace
-            ICameraSceneNode* camfree =  smgr->addCameraSceneNodeFPS(
-                    0,
-            100,
-            10.0f,
-            -1,
-            0,//keymap
-            5
-            );
-            camfree->setFarValue(30000.0f);
+        if(receiver.IsKeyDown(KEY_KEY_M)){
+        
+            smgr->setActiveCamera(camfree);
         }
         
         
@@ -163,7 +134,75 @@ void keyreception(){
 
 }
 
+void initialisationOut(){
+    
+    MyShaderCallBack2 mc;
 
+    sydney = Heros();
+    IAnimatedMesh* sydney_mesh = smgr ->getMesh("media/sydney.md2");
+    sydney.node = smgr->addAnimatedMeshSceneNode(sydney_mesh);
+    sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
+    
+    keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
+    keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
+    keyMap[1].Action = irr::EKA_MOVE_BACKWARD; // reculer
+    keyMap[1].KeyCode = irr::KEY_KEY_S;        // s
+    keyMap[2].Action = irr::EKA_STRAFE_LEFT;   // a gauche
+    keyMap[2].KeyCode = irr::KEY_KEY_A;        // a
+    keyMap[3].Action = irr::EKA_STRAFE_RIGHT;  // a droite
+    keyMap[3].KeyCode = irr::KEY_KEY_D;        // d
+    keyMap[4].Action = irr::EKA_JUMP_UP;       // saut
+    keyMap[4].KeyCode = irr::KEY_SPACE;        // barre espace
+    camfree =  smgr->addCameraSceneNodeFPS(
+            0,
+    100,
+    10.0f,
+    -1,
+    0,//keymap
+    5
+    );
+    camfree->setFarValue(30000.0f);
+
+
+    cam = Camera(smgr);
+    cam.initiateFPScam(sydney.node);
+    cam.initiateTPScam(sydney.node);
+  //  cam.initiateMayacam(sydney.node);
+    cam.switchcamtype(cam.IdFps);
+
+    sydney.node->setPosition(vector3df(0,2000,0));
+    
+
+    
+    device->getCursorControl()->setVisible(false);
+
+    cam.cam->setParent(sydney.node);
+
+    //terrain creation
+    const io::path& heightMapFileName = "data/dataterrain/hm2.jpg";
+    const io::path& TextureFileName = "data/dataterrain/terrain-texture.jpg";
+    io::path vsFileName = "data/dataterrain/terrain.vert"; // filename for the vertex shader
+    io::path psFileName = "data/dataterrain/terrain.frag"; // filename for the pixel shader
+    myterrain ter = myterrain();
+    ter.terrainHM(smgr, heightMapFileName);
+    ter.setMaterialFlag(video::EMF_LIGHTING, false);
+    ter.setMaterialTexture(0, driver->getTexture(TextureFileName));
+    ter.myShaders(vsFileName, psFileName, driver->getGPUProgrammingServices(), &mc);
+    ter.addskybox(smgr, driver);
+    ter.createTriangleSelector();
+    sydney.addcolision(ter.monterrain->getTriangleSelector(), smgr);
+    skydome = ter.skydome;
+
+    //quad creation
+    const io::path& vsquad = "data/datawater/vtest.vert";
+    const io::path& fsquad = "data/datawater/ftest.frag";
+    waterquad water = waterquad(smgr, driver,
+        dimension2df(800,800), dimension2du(25,25));
+    water.myShaders(vsquad, fsquad, driver->getGPUProgrammingServices(), &mc);
+   
+    mc.drop();
+    
+}
 
 int main(){
 
@@ -178,10 +217,10 @@ int main(){
     device->setWindowCaption(L"Game");
 
 
-    IVideoDriver* driver = device->getVideoDriver();
+    driver = device->getVideoDriver();
     smgr = device->getSceneManager();
     IGUIEnvironment* guienv = device->getGUIEnvironment();
-
+    
     MyShaderCallBack2 mc;
 
     sydney = Heros();
@@ -189,15 +228,39 @@ int main(){
     sydney.node = smgr->addAnimatedMeshSceneNode(sydney_mesh);
     sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
     
+    keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
+    keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
+    keyMap[1].Action = irr::EKA_MOVE_BACKWARD; // reculer
+    keyMap[1].KeyCode = irr::KEY_KEY_S;        // s
+    keyMap[2].Action = irr::EKA_STRAFE_LEFT;   // a gauche
+    keyMap[2].KeyCode = irr::KEY_KEY_A;        // a
+    keyMap[3].Action = irr::EKA_STRAFE_RIGHT;  // a droite
+    keyMap[3].KeyCode = irr::KEY_KEY_D;        // d
+    keyMap[4].Action = irr::EKA_JUMP_UP;       // saut
+    keyMap[4].KeyCode = irr::KEY_SPACE;        // barre espace
+    camfree =  smgr->addCameraSceneNodeFPS(
+            0,
+    100,
+    10.0f,
+    -1,
+    0,//keymap
+    5
+    );
+    camfree->setFarValue(30000.0f);
+
+
     cam = Camera(smgr);
     cam.initiateFPScam(sydney.node);
     cam.initiateTPScam(sydney.node);
   //  cam.initiateMayacam(sydney.node);
     cam.switchcamtype(cam.IdFps);
+
+    
     
  
     vector3df r = sydney.getRotation();
     vector3df p = sydney.getPosition();
+    sydney.node->setPosition(vector3df(0,2000,0));
     std::cout<<"rotation"<<r.X<<" "<<r.Y<<" "<<r.Z<<std::endl;
     r = sydney.getRotation().rotationToDirection();
     std::cout<<"rotation"<<r.X<<" "<<r.Y<<" "<<r.Z;
@@ -217,6 +280,8 @@ int main(){
     ter.setMaterialTexture(0, driver->getTexture(TextureFileName));
     ter.myShaders(vsFileName, psFileName, driver->getGPUProgrammingServices(), &mc);
     ter.addskybox(smgr, driver);
+    ter.createTriangleSelector();
+    sydney.addcolision(ter.monterrain->getTriangleSelector(), smgr);
     skydome = ter.skydome;
 
     //quad creation
@@ -227,7 +292,8 @@ int main(){
     water.myShaders(vsquad, fsquad, driver->getGPUProgrammingServices(), &mc);
    
     mc.drop();
-
+    
+  //  initialisationOut();
     int lastFPS = -1;
     start = std::chrono::system_clock::now();
     
@@ -239,15 +305,15 @@ int main(){
         int fps = driver->getFPS();
         end = std::chrono::system_clock::now();
         t = std::chrono::duration_cast<std::chrono::duration<float>>(start - end).count();
-        p += vector3df(0.1,0,0);
-        //sydney.node->setPosition(p);
-        r +=  vector3df(0,0.1,0);
-        //sydney.node->setRotation(r);
-        if(cam.ActiveId == cam.IdFps)
-            sydney.turnright(cam.camFPS->getRotation());
-        cam.updateFPScam(sydney.node);
+        
+        if(sydney.node != NULL){
+            if(cam.ActiveId == cam.IdFps)
+                sydney.turnright(cam.camFPS->getRotation());
+            cam.updateFPScam(sydney.node);
+            cam.updateTPSCam(sydney.node);
+        }
         keyreception();
-        cam.updateTPSCam(sydney.node);
+        
                 if (lastFPS != fps)
                 {
                     core::stringw tmp(L"GAME - Irrlicht Engine [");

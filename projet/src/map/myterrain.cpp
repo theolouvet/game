@@ -73,3 +73,10 @@ void myterrain::addskybox(ISceneManager* smgr, IVideoDriver* driver){
             driver->getTexture("data/datasky/skydome.jpg"),30,8,0.96f,2.f);
        driver->setTextureCreationFlag(video::ETCF_CREATE_MIP_MAPS, true);
 }
+
+void myterrain::createTriangleSelector(){
+selector  = monterrain->getSceneManager()->createTerrainTriangleSelector(monterrain, 0);
+       monterrain->setTriangleSelector(selector);
+}
+
+ITriangleSelector* myterrain::getTriangleSelector(){return monterrain->getTriangleSelector();}

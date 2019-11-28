@@ -27,9 +27,12 @@ public:
                     IShaderConstantSetCallBack*);
     void addskybox(ISceneManager*, IVideoDriver*);
     void rotationSkydome(vector3df v);
+    void createTriangleSelector();
+    ITriangleSelector* getTriangleSelector();
     const video::E_GPU_SHADING_LANGUAGE shadingLanguage = video::EGSL_DEFAULT;
 
     scene::ISceneNode* skydome;
+    ITriangleSelector* selector = 0;
 };
 
 #endif

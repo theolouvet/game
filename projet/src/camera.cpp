@@ -26,6 +26,7 @@ void Camera::initiateTPScam(is::IAnimatedMeshSceneNode* node){
     pos += relatifPos;
     cam = camsmgr->addCameraSceneNode(0,pos, node->getPosition() + relatifTarget);
     camsmgr->setActiveCamera(cam);
+    cam->setFarValue(10000);
     ActiveId = IdTps;
     TPS = true;
 }
@@ -55,7 +56,7 @@ void Camera::initiateFPScam(is::IAnimatedMeshSceneNode* node){
     ic::vector3df pos = node->getPosition();
     camFPS->setPosition(pos+ ic::vector3df(-1,25,0));
     camFPS->setTarget(pos);
-
+    camFPS->setFarValue(10000);
     FPS = true;
     ActiveId = IdFps;
 }
