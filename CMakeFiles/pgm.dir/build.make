@@ -129,9 +129,57 @@ CMakeFiles/pgm.dir/projet/src/main.cpp.o.provides: CMakeFiles/pgm.dir/projet/src
 CMakeFiles/pgm.dir/projet/src/main.cpp.o.provides.build: CMakeFiles/pgm.dir/projet/src/main.cpp.o
 
 
+CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o: CMakeFiles/pgm.dir/flags.make
+CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o: projet/src/map/myterrain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o -c /home/thep/Documents/game/projet/src/map/myterrain.cpp
+
+CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/game/projet/src/map/myterrain.cpp > CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.i
+
+CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/game/projet/src/map/myterrain.cpp -o CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.s
+
+CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o.requires:
+
+.PHONY : CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o.requires
+
+CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o.provides: CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o.requires
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o.provides.build
+.PHONY : CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o.provides
+
+CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o.provides.build: CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o
+
+
+CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o: CMakeFiles/pgm.dir/flags.make
+CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o: projet/src/map/waterquad.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o -c /home/thep/Documents/game/projet/src/map/waterquad.cpp
+
+CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/thep/Documents/game/projet/src/map/waterquad.cpp > CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.i
+
+CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/thep/Documents/game/projet/src/map/waterquad.cpp -o CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.s
+
+CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o.requires:
+
+.PHONY : CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o.requires
+
+CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o.provides: CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o.requires
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o.provides.build
+.PHONY : CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o.provides
+
+CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o.provides.build: CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o
+
+
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o: CMakeFiles/pgm.dir/flags.make
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o: projet/src/myeventreceiver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o -c /home/thep/Documents/game/projet/src/myeventreceiver.cpp
 
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.i: cmake_force
@@ -155,7 +203,7 @@ CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o.provides.build: CMakeFiles/p
 
 CMakeFiles/pgm.dir/projet/src/personnages.cpp.o: CMakeFiles/pgm.dir/flags.make
 CMakeFiles/pgm.dir/projet/src/personnages.cpp.o: projet/src/personnages.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/pgm.dir/projet/src/personnages.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/pgm.dir/projet/src/personnages.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pgm.dir/projet/src/personnages.cpp.o -c /home/thep/Documents/game/projet/src/personnages.cpp
 
 CMakeFiles/pgm.dir/projet/src/personnages.cpp.i: cmake_force
@@ -182,6 +230,8 @@ pgm_OBJECTS = \
 "CMakeFiles/pgm.dir/projet/src/camera.cpp.o" \
 "CMakeFiles/pgm.dir/projet/src/heros.cpp.o" \
 "CMakeFiles/pgm.dir/projet/src/main.cpp.o" \
+"CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o" \
+"CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o" \
 "CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o" \
 "CMakeFiles/pgm.dir/projet/src/personnages.cpp.o"
 
@@ -191,11 +241,13 @@ pgm_EXTERNAL_OBJECTS =
 pgm: CMakeFiles/pgm.dir/projet/src/camera.cpp.o
 pgm: CMakeFiles/pgm.dir/projet/src/heros.cpp.o
 pgm: CMakeFiles/pgm.dir/projet/src/main.cpp.o
+pgm: CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o
+pgm: CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o
 pgm: CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o
 pgm: CMakeFiles/pgm.dir/projet/src/personnages.cpp.o
 pgm: CMakeFiles/pgm.dir/build.make
 pgm: CMakeFiles/pgm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable pgm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thep/Documents/game/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable pgm"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pgm.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -206,6 +258,8 @@ CMakeFiles/pgm.dir/build: pgm
 CMakeFiles/pgm.dir/requires: CMakeFiles/pgm.dir/projet/src/camera.cpp.o.requires
 CMakeFiles/pgm.dir/requires: CMakeFiles/pgm.dir/projet/src/heros.cpp.o.requires
 CMakeFiles/pgm.dir/requires: CMakeFiles/pgm.dir/projet/src/main.cpp.o.requires
+CMakeFiles/pgm.dir/requires: CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o.requires
+CMakeFiles/pgm.dir/requires: CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o.requires
 CMakeFiles/pgm.dir/requires: CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o.requires
 CMakeFiles/pgm.dir/requires: CMakeFiles/pgm.dir/projet/src/personnages.cpp.o.requires
 

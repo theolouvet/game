@@ -13,8 +13,16 @@ CMakeFiles/pgm.dir/projet/src/heros.cpp.o: projet/src/personnages.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/camera.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/heros.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/main.cpp
+CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/map/myterrain.h
+CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/map/waterquad.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/myeventreceiver.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/personnages.h
+
+CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o: projet/src/map/myterrain.cpp
+CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o: projet/src/map/myterrain.h
+
+CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o: projet/src/map/waterquad.cpp
+CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o: projet/src/map/waterquad.h
 
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o: projet/src/myeventreceiver.cpp
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o: projet/src/myeventreceiver.h

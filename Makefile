@@ -204,6 +204,60 @@ projet/src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/main.cpp.s
 .PHONY : projet/src/main.cpp.s
 
+projet/src/map/myterrain.o: projet/src/map/myterrain.cpp.o
+
+.PHONY : projet/src/map/myterrain.o
+
+# target to build an object file
+projet/src/map/myterrain.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o
+.PHONY : projet/src/map/myterrain.cpp.o
+
+projet/src/map/myterrain.i: projet/src/map/myterrain.cpp.i
+
+.PHONY : projet/src/map/myterrain.i
+
+# target to preprocess a source file
+projet/src/map/myterrain.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.i
+.PHONY : projet/src/map/myterrain.cpp.i
+
+projet/src/map/myterrain.s: projet/src/map/myterrain.cpp.s
+
+.PHONY : projet/src/map/myterrain.s
+
+# target to generate assembly for a file
+projet/src/map/myterrain.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.s
+.PHONY : projet/src/map/myterrain.cpp.s
+
+projet/src/map/waterquad.o: projet/src/map/waterquad.cpp.o
+
+.PHONY : projet/src/map/waterquad.o
+
+# target to build an object file
+projet/src/map/waterquad.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o
+.PHONY : projet/src/map/waterquad.cpp.o
+
+projet/src/map/waterquad.i: projet/src/map/waterquad.cpp.i
+
+.PHONY : projet/src/map/waterquad.i
+
+# target to preprocess a source file
+projet/src/map/waterquad.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.i
+.PHONY : projet/src/map/waterquad.cpp.i
+
+projet/src/map/waterquad.s: projet/src/map/waterquad.cpp.s
+
+.PHONY : projet/src/map/waterquad.s
+
+# target to generate assembly for a file
+projet/src/map/waterquad.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.s
+.PHONY : projet/src/map/waterquad.cpp.s
+
 projet/src/myeventreceiver.o: projet/src/myeventreceiver.cpp.o
 
 .PHONY : projet/src/myeventreceiver.o
@@ -276,6 +330,12 @@ help:
 	@echo "... projet/src/main.o"
 	@echo "... projet/src/main.i"
 	@echo "... projet/src/main.s"
+	@echo "... projet/src/map/myterrain.o"
+	@echo "... projet/src/map/myterrain.i"
+	@echo "... projet/src/map/myterrain.s"
+	@echo "... projet/src/map/waterquad.o"
+	@echo "... projet/src/map/waterquad.i"
+	@echo "... projet/src/map/waterquad.s"
 	@echo "... projet/src/myeventreceiver.o"
 	@echo "... projet/src/myeventreceiver.i"
 	@echo "... projet/src/myeventreceiver.s"
