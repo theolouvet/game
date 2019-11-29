@@ -22,10 +22,13 @@ MyEventReceiver receiver;
 irr::SKeyMap keyMap[5];
 Heros sydney;
 std::chrono::time_point<std::chrono::system_clock> start, end;
+float test = 1.0f;
+float alphaw = 1.0;
 bool ani = false;
 bool keyrelease = true;
 bool freecam = false;
 float t;
+
 scene::ISceneNode* skydome;
 core::vector3df ligth = vector3df(-5000,5000,14000);
 IVideoDriver* driver;
@@ -56,6 +59,10 @@ public:
             ligth.rotateXZBy(skydome->getRotation().Y/180);
             services->setVertexShaderConstant("mLightPos", reinterpret_cast<f32*>(&ligth), 3);
             services->setVertexShaderConstant("mCamPos", reinterpret_cast<f32*>(&pos), 3);
+
+
+            services->setVertexShaderConstant("romain",&test, 1);
+            services->setVertexShaderConstant("alpha",&alphaw, 1);
         
            
             core::matrix4 world = driver->getTransform(video::ETS_WORLD);
@@ -139,9 +146,11 @@ void initialisationOut(){
     MyShaderCallBack2 mc;
 
     sydney = Heros();
-    IAnimatedMesh* sydney_mesh = smgr ->getMesh("media/sydney.md2");
+    //IAnimatedMesh* sydney_mesh = smgr ->getMesh("media/sydney.md2");
+    IAnimatedMesh* sydney_mesh = smgr ->getMesh("data/eagle/eagle.md2");
     sydney.node = smgr->addAnimatedMeshSceneNode(sydney_mesh);
-    sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
+    //sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
+    sydney.loadTexture(driver->getTexture("data/eagle/eagle.md2"));
     
     keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
     keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
@@ -206,7 +215,7 @@ void initialisationOut(){
 
 int main(){
 
-
+    //ligth = vector3df(-500,1000,1400);
     video::E_DRIVER_TYPE driverType= video::EDT_OPENGL ;
     if (driverType==video::EDT_COUNT)
         return 1;
@@ -216,6 +225,8 @@ int main(){
         return 1;
     device->setWindowCaption(L"Game");
 
+    //vector3df rot = skydome->getRotation();
+   // skydome->setRotation(rot + vector3df(0,0.01,1));
 
     driver = device->getVideoDriver();
     smgr = device->getSceneManager();
@@ -223,10 +234,11 @@ int main(){
     
     MyShaderCallBack2 mc;
 
-    sydney = Heros();
-    IAnimatedMesh* sydney_mesh = smgr ->getMesh("media/sydney.md2");
+    //IAnimatedMesh* sydney_mesh = smgr ->getMesh("media/sydney.md2");
+    IAnimatedMesh* sydney_mesh = smgr ->getMesh("data/eagle/eagle.md2");
     sydney.node = smgr->addAnimatedMeshSceneNode(sydney_mesh);
-    sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
+    //sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
+    sydney.loadTexture(driver->getTexture("data/eagle/eagle.jpg"));
     
     keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
     keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
@@ -278,10 +290,11 @@ int main(){
     ter.terrainHM(smgr, heightMapFileName);
     ter.setMaterialFlag(video::EMF_LIGHTING, false);
     ter.setMaterialTexture(0, driver->getTexture(TextureFileName));
+     ter.setMaterialTexture(1, driver->getTexture("data/datawater/stones.jpg"));
     ter.myShaders(vsFileName, psFileName, driver->getGPUProgrammingServices(), &mc);
     ter.addskybox(smgr, driver);
     ter.createTriangleSelector();
-    sydney.addcolision(ter.monterrain->getTriangleSelector(), smgr);
+    //sydney.addcolision(ter.monterrain->getTriangleSelector(), smgr);
     skydome = ter.skydome;
 
     //quad creation
@@ -296,10 +309,11 @@ int main(){
   //  initialisationOut();
     int lastFPS = -1;
     start = std::chrono::system_clock::now();
-    
+
     while(device->run())
     {
         driver->beginScene(true, true, video::SColor(255,200,200,200));
+
         smgr->drawAll();
         driver->endScene();
         int fps = driver->getFPS();
@@ -313,13 +327,31 @@ int main(){
             cam.updateTPSCam(sydney.node);
         }
         keyreception();
-        
+        if(smgr->getActiveCamera()->getPosition().Y <600.0f){
+            test = 10.0f;
+            alphaw = 0.5f;
+        }
+        else if(smgr->getActiveCamera()->getPosition().Y >3000.0f){
+            test = 1.0f;
+            alphaw = 1.0f;
+        }
+        else{
+            test =  10 * (3000.0f - smgr->getActiveCamera()->getPosition().Y)/2400.0f;
+            alphaw = 0.5f + 0.5f * (3000.0f - smgr->getActiveCamera()->getPosition().Y)/2400.0f;
+        }
+        vector3df rot = skydome->getRotation();
+        //skydome->setRotation(rot + vector3df(0,0.01,0));
+        //ligth.rotateXZBy(skydome->getRotation().Y/180.0f);
+                //std::cout<<test<<" "<<smgr->getActiveCamera()->getPosition().Y<<std::endl;
                 if (lastFPS != fps)
                 {
                     core::stringw tmp(L"GAME - Irrlicht Engine [");
                     tmp += driver->getName();
                     tmp += L"] fps: ";
                     tmp += fps;
+                    tmp += L"] Y: ";
+                    tmp += test;
+
 
                     device->setWindowCaption(tmp.c_str());
                     lastFPS = fps;

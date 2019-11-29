@@ -16,6 +16,7 @@ irr::core::dimension2d<irr::f32> csize,irr::core::dimension2d<irr::u32> nbc){
          driver->makeNormalMapTexture(NormalMap, 9.0f);
          ground->setMaterialTexture(0, driver->getTexture("data/datawater/water.jpg"));
          ground->setMaterialTexture(1, NormalMap);
+         ground->setMaterialTexture(2, driver->getTexture("data/datawater/sand.jpg"));
          ground->getMaterial(0).MaterialTypeParam = 0.035f;
       }
 

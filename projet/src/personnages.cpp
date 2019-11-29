@@ -16,14 +16,14 @@ ic::vector3df Personnages::getRotation(){
 void Personnages::run(){
     if(state != is::EMAT_RUN){
         state = is::EMAT_RUN;
-        node->setMD2Animation( is::EMAT_RUN);
+        node->setMD2Animation( is::EMAT_WAVE);
     }
 }
 
 void Personnages::stand(){
     if(state != is::EMAT_STAND){
         state = is::EMAT_STAND;
-        node->setMD2Animation( is::EMAT_STAND);
+        node->setMD2Animation( is::EMAT_DEATH_FALLBACKSLOW);
     }
 }
 
