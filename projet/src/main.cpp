@@ -6,6 +6,7 @@
 #include "myeventreceiver.h"
 #include "map/myterrain.h"
 #include "map/waterquad.h"
+#include "map/qmap.h"
 #include <chrono>
 
 using namespace irr;
@@ -131,6 +132,14 @@ void keyreception(){
         
             smgr->setActiveCamera(camfree);
         }
+
+        if(receiver.IsKeyDown(KEY_KEY_N)){
+        
+            std::cout<<camfree->getPosition().X<<" ";
+            std::cout<<camfree->getPosition().Y<<" ";
+            std::cout<<camfree->getPosition().Z<<" "<<std::endl;
+
+        }
         
         
     }
@@ -141,77 +150,7 @@ void keyreception(){
 
 }
 
-void initialisationOut(){
-    
-    MyShaderCallBack2 mc;
 
-    sydney = Heros();
-    //IAnimatedMesh* sydney_mesh = smgr ->getMesh("media/sydney.md2");
-    IAnimatedMesh* sydney_mesh = smgr ->getMesh("data/eagle/eagle.md2");
-    sydney.node = smgr->addAnimatedMeshSceneNode(sydney_mesh);
-    //sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
-    sydney.loadTexture(driver->getTexture("data/eagle/eagle.md2"));
-    
-    keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
-    keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
-    keyMap[1].Action = irr::EKA_MOVE_BACKWARD; // reculer
-    keyMap[1].KeyCode = irr::KEY_KEY_S;        // s
-    keyMap[2].Action = irr::EKA_STRAFE_LEFT;   // a gauche
-    keyMap[2].KeyCode = irr::KEY_KEY_A;        // a
-    keyMap[3].Action = irr::EKA_STRAFE_RIGHT;  // a droite
-    keyMap[3].KeyCode = irr::KEY_KEY_D;        // d
-    keyMap[4].Action = irr::EKA_JUMP_UP;       // saut
-    keyMap[4].KeyCode = irr::KEY_SPACE;        // barre espace
-    camfree =  smgr->addCameraSceneNodeFPS(
-            0,
-    100,
-    10.0f,
-    -1,
-    0,//keymap
-    5
-    );
-    camfree->setFarValue(30000.0f);
-
-
-    cam = Camera(smgr);
-    cam.initiateFPScam(sydney.node);
-    cam.initiateTPScam(sydney.node);
-  //  cam.initiateMayacam(sydney.node);
-    cam.switchcamtype(cam.IdFps);
-
-    sydney.node->setPosition(vector3df(0,2000,0));
-    
-
-    
-    device->getCursorControl()->setVisible(false);
-
-    cam.cam->setParent(sydney.node);
-
-    //terrain creation
-    const io::path& heightMapFileName = "data/dataterrain/hm2.jpg";
-    const io::path& TextureFileName = "data/dataterrain/terrain-texture.jpg";
-    io::path vsFileName = "data/dataterrain/terrain.vert"; // filename for the vertex shader
-    io::path psFileName = "data/dataterrain/terrain.frag"; // filename for the pixel shader
-    myterrain ter = myterrain();
-    ter.terrainHM(smgr, heightMapFileName);
-    ter.setMaterialFlag(video::EMF_LIGHTING, false);
-    ter.setMaterialTexture(0, driver->getTexture(TextureFileName));
-    ter.myShaders(vsFileName, psFileName, driver->getGPUProgrammingServices(), &mc);
-    ter.addskybox(smgr, driver);
-    ter.createTriangleSelector();
-    sydney.addcolision(ter.monterrain->getTriangleSelector(), smgr);
-    skydome = ter.skydome;
-
-    //quad creation
-    const io::path& vsquad = "data/datawater/vtest.vert";
-    const io::path& fsquad = "data/datawater/ftest.frag";
-    waterquad water = waterquad(smgr, driver,
-        dimension2df(800,800), dimension2du(25,25));
-    water.myShaders(vsquad, fsquad, driver->getGPUProgrammingServices(), &mc);
-   
-    mc.drop();
-    
-}
 
 int main(){
 
@@ -234,11 +173,11 @@ int main(){
     
     MyShaderCallBack2 mc;
 
-    //IAnimatedMesh* sydney_mesh = smgr ->getMesh("media/sydney.md2");
-    IAnimatedMesh* sydney_mesh = smgr ->getMesh("data/eagle/eagle.md2");
+    IAnimatedMesh* sydney_mesh = smgr ->getMesh("media/sydney.md2");
+    //IAnimatedMesh* sydney_mesh = smgr ->getMesh("data/eagle/eagle.md2");
     sydney.node = smgr->addAnimatedMeshSceneNode(sydney_mesh);
-    //sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
-    sydney.loadTexture(driver->getTexture("data/eagle/eagle.jpg"));
+    sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
+    //sydney.loadTexture(driver->getTexture("data/eagle/eagle.jpg"));
     
     keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
     keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
@@ -303,7 +242,30 @@ int main(){
     waterquad water = waterquad(smgr, driver,
         dimension2df(800,800), dimension2du(25,25));
     water.myShaders(vsquad, fsquad, driver->getGPUProgrammingServices(), &mc);
-   
+  
+    scene::IMetaTriangleSelector* worldSel = smgr->createMetaTriangleSelector();
+    //map qmap
+    qmap qm = qmap(smgr, device);
+    sydney.node->setPosition(vector3df(997,4747,878));
+   // qm.createTriangleSelector();
+    ITriangleSelector* selector  = qm.node ->getSceneManager()->createOctreeTriangleSelector(
+        qm.mesh, qm.node, 0);
+    if(selector == NULL){
+        std::cout<<"NULL SELECTOR";
+        return 0;}
+    qm.node->setTriangleSelector(selector);
+
+    worldSel->addTriangleSelector(ter.selector);
+    worldSel->addTriangleSelector(selector);
+    sydney.addcolision(worldSel, smgr);
+    camfree->addAnimator(smgr->createCollisionResponseAnimator(
+        worldSel, camfree, ic::vector3df(30,30,30),
+                ic::vector3df(0,0,0),ic::vector3df(0,30,0))
+    );
+    selector->drop();
+    ter.selector->drop();
+
+
     mc.drop();
     
   //  initialisationOut();

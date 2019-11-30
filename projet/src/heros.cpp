@@ -8,7 +8,7 @@ Heros::Heros()
 
 void Heros::loadTexture(irr::video::ITexture *texture){
     node->setMaterialFlag(irr::video::EMF_LIGHTING, false);
-    node->setMD2Animation(irr::scene::EMAT_RUN);
+    node->setMD2Animation(irr::scene::EMAT_STAND);
     node->setMaterialTexture( 0, texture);
 }
 

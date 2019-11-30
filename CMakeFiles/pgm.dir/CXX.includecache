@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,47 +6,85 @@
 
 #IncludeRegexTransform: 
 
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/camera.h
+/home/thep/Documents/game/projet/src/camera.cpp
+camera.h
+/home/thep/Documents/game/projet/src/camera.h
+iostream
+-
+
+/home/thep/Documents/game/projet/src/camera.h
 irrlicht/irrlicht.h
 -
 heros.h
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/heros.h
+/home/thep/Documents/game/projet/src/heros.h
 
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/heros.h
+/home/thep/Documents/game/projet/src/heros.cpp
+heros.h
+/home/thep/Documents/game/projet/src/heros.h
+iostream
+-
+
+/home/thep/Documents/game/projet/src/heros.h
 personnages.h
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/personnages.h
+/home/thep/Documents/game/projet/src/personnages.h
 
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/main.cpp
+/home/thep/Documents/game/projet/src/main.cpp
 irrlicht/irrlicht.h
 -
 iostream
 -
 heros.h
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/heros.h
+/home/thep/Documents/game/projet/src/heros.h
 camera.h
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/camera.h
+/home/thep/Documents/game/projet/src/camera.h
 myeventreceiver.h
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/myeventreceiver.h
+/home/thep/Documents/game/projet/src/myeventreceiver.h
 map/myterrain.h
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/map/myterrain.h
+/home/thep/Documents/game/projet/src/map/myterrain.h
 map/waterquad.h
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/map/waterquad.h
+/home/thep/Documents/game/projet/src/map/waterquad.h
+map/qmap.h
+/home/thep/Documents/game/projet/src/map/qmap.h
 chrono
 -
 
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/map/myterrain.h
+/home/thep/Documents/game/projet/src/map/myterrain.cpp
+myterrain.h
+/home/thep/Documents/game/projet/src/map/myterrain.h
+
+/home/thep/Documents/game/projet/src/map/myterrain.h
 irrlicht/irrlicht.h
 -
 
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/map/waterquad.h
+/home/thep/Documents/game/projet/src/map/qmap.cpp
+qmap.h
+/home/thep/Documents/game/projet/src/map/qmap.h
+
+/home/thep/Documents/game/projet/src/map/qmap.h
 irrlicht/irrlicht.h
 -
 
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/myeventreceiver.h
+/home/thep/Documents/game/projet/src/map/waterquad.cpp
+waterquad.h
+/home/thep/Documents/game/projet/src/map/waterquad.h
+
+/home/thep/Documents/game/projet/src/map/waterquad.h
 irrlicht/irrlicht.h
 -
 
-/fs03/share/users/romain.biassin/home/Documents/game/projet/src/personnages.h
+/home/thep/Documents/game/projet/src/myeventreceiver.cpp
+myeventreceiver.h
+/home/thep/Documents/game/projet/src/myeventreceiver.h
+
+/home/thep/Documents/game/projet/src/myeventreceiver.h
+irrlicht/irrlicht.h
+-
+
+/home/thep/Documents/game/projet/src/personnages.cpp
+personnages.h
+/home/thep/Documents/game/projet/src/personnages.h
+
+/home/thep/Documents/game/projet/src/personnages.h
 irrlicht/irrlicht.h
 -
 math.h
