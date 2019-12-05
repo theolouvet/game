@@ -33,18 +33,10 @@ irrlicht/irrlicht.h
 -
 iostream
 -
-heros.h
-/home/thep/Documents/game/projet/src/heros.h
-camera.h
-/home/thep/Documents/game/projet/src/camera.h
 myeventreceiver.h
 /home/thep/Documents/game/projet/src/myeventreceiver.h
-map/myterrain.h
-/home/thep/Documents/game/projet/src/map/myterrain.h
-map/waterquad.h
-/home/thep/Documents/game/projet/src/map/waterquad.h
-map/qmap.h
-/home/thep/Documents/game/projet/src/map/qmap.h
+quake.h
+/home/thep/Documents/game/projet/src/quake.h
 chrono
 -
 
@@ -72,6 +64,14 @@ waterquad.h
 irrlicht/irrlicht.h
 -
 
+/home/thep/Documents/game/projet/src/mascene.cpp
+mascene.h
+/home/thep/Documents/game/projet/src/mascene.h
+
+/home/thep/Documents/game/projet/src/mascene.h
+irrlicht/irrlicht.h
+-
+
 /home/thep/Documents/game/projet/src/myeventreceiver.cpp
 myeventreceiver.h
 /home/thep/Documents/game/projet/src/myeventreceiver.h
@@ -91,4 +91,16 @@ math.h
 -
 iostream
 -
+
+/home/thep/Documents/game/projet/src/quake.cpp
+quake.h
+/home/thep/Documents/game/projet/src/quake.h
+heros.h
+/home/thep/Documents/game/projet/src/heros.h
+
+/home/thep/Documents/game/projet/src/quake.h
+irrlicht/irrlicht.h
+-
+mascene.h
+/home/thep/Documents/game/projet/src/mascene.h
 

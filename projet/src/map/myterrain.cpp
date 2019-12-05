@@ -76,6 +76,7 @@ void myterrain::addskybox(ISceneManager* smgr, IVideoDriver* driver){
 
 void myterrain::createTriangleSelector(){
 selector  = monterrain->getSceneManager()->createTerrainTriangleSelector(monterrain, 0);
+
        monterrain->setTriangleSelector(selector);
 }
 

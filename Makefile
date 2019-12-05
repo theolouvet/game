@@ -285,6 +285,33 @@ projet/src/map/waterquad.cpp.s:
 	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.s
 .PHONY : projet/src/map/waterquad.cpp.s
 
+projet/src/mascene.o: projet/src/mascene.cpp.o
+
+.PHONY : projet/src/mascene.o
+
+# target to build an object file
+projet/src/mascene.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/mascene.cpp.o
+.PHONY : projet/src/mascene.cpp.o
+
+projet/src/mascene.i: projet/src/mascene.cpp.i
+
+.PHONY : projet/src/mascene.i
+
+# target to preprocess a source file
+projet/src/mascene.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/mascene.cpp.i
+.PHONY : projet/src/mascene.cpp.i
+
+projet/src/mascene.s: projet/src/mascene.cpp.s
+
+.PHONY : projet/src/mascene.s
+
+# target to generate assembly for a file
+projet/src/mascene.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/mascene.cpp.s
+.PHONY : projet/src/mascene.cpp.s
+
 projet/src/myeventreceiver.o: projet/src/myeventreceiver.cpp.o
 
 .PHONY : projet/src/myeventreceiver.o
@@ -339,6 +366,33 @@ projet/src/personnages.cpp.s:
 	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/personnages.cpp.s
 .PHONY : projet/src/personnages.cpp.s
 
+projet/src/quake.o: projet/src/quake.cpp.o
+
+.PHONY : projet/src/quake.o
+
+# target to build an object file
+projet/src/quake.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/quake.cpp.o
+.PHONY : projet/src/quake.cpp.o
+
+projet/src/quake.i: projet/src/quake.cpp.i
+
+.PHONY : projet/src/quake.i
+
+# target to preprocess a source file
+projet/src/quake.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/quake.cpp.i
+.PHONY : projet/src/quake.cpp.i
+
+projet/src/quake.s: projet/src/quake.cpp.s
+
+.PHONY : projet/src/quake.s
+
+# target to generate assembly for a file
+projet/src/quake.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/quake.cpp.s
+.PHONY : projet/src/quake.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -366,12 +420,18 @@ help:
 	@echo "... projet/src/map/waterquad.o"
 	@echo "... projet/src/map/waterquad.i"
 	@echo "... projet/src/map/waterquad.s"
+	@echo "... projet/src/mascene.o"
+	@echo "... projet/src/mascene.i"
+	@echo "... projet/src/mascene.s"
 	@echo "... projet/src/myeventreceiver.o"
 	@echo "... projet/src/myeventreceiver.i"
 	@echo "... projet/src/myeventreceiver.s"
 	@echo "... projet/src/personnages.o"
 	@echo "... projet/src/personnages.i"
 	@echo "... projet/src/personnages.s"
+	@echo "... projet/src/quake.o"
+	@echo "... projet/src/quake.i"
+	@echo "... projet/src/quake.s"
 .PHONY : help
 
 

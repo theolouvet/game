@@ -5,8 +5,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o"
   "CMakeFiles/pgm.dir/projet/src/map/qmap.cpp.o"
   "CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o"
+  "CMakeFiles/pgm.dir/projet/src/mascene.cpp.o"
   "CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o"
   "CMakeFiles/pgm.dir/projet/src/personnages.cpp.o"
+  "CMakeFiles/pgm.dir/projet/src/quake.cpp.o"
   "pgm.pdb"
   "pgm"
 )
