@@ -37,6 +37,8 @@ myeventreceiver.h
 /home/thep/Documents/game/projet/src/myeventreceiver.h
 quake.h
 /home/thep/Documents/game/projet/src/quake.h
+heros.h
+/home/thep/Documents/game/projet/src/heros.h
 chrono
 -
 
@@ -67,10 +69,14 @@ irrlicht/irrlicht.h
 /home/thep/Documents/game/projet/src/mascene.cpp
 mascene.h
 /home/thep/Documents/game/projet/src/mascene.h
+heros.h
+/home/thep/Documents/game/projet/src/heros.h
 
 /home/thep/Documents/game/projet/src/mascene.h
 irrlicht/irrlicht.h
 -
+heros.h
+/home/thep/Documents/game/projet/src/heros.h
 
 /home/thep/Documents/game/projet/src/myeventreceiver.cpp
 myeventreceiver.h

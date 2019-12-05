@@ -10,7 +10,7 @@ private:
     /* data */
 public:
     quake(IrrlichtDevice *);
-
+    void initiatedHeros();
 };
 
 #endif

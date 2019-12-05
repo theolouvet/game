@@ -10,3 +10,7 @@ void mascene::draw(){
     smgr->drawAll();
 }
 
+void mascene::addHeros(Heros* h){
+    heros = h;
+}
+

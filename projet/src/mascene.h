@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include<irrlicht/irrlicht.h>
-
+#include"heros.h"
 using namespace irr;
 using namespace core;
 using namespace scene;
@@ -20,6 +20,9 @@ private:
 public:
     mascene(IrrlichtDevice *);
     void draw();
+    void addHeros(Heros*);
+
+    Heros* heros;
     ISceneManager* smgr ;
     IrrlichtDevice *dev;
     enum
