@@ -6,27 +6,39 @@
 
 #IncludeRegexTransform: 
 
-/home/thep/Documents/game/projet/src/camera.cpp
+/home/thep/Documents/game/projet/src/camera/camera.cpp
 camera.h
-/home/thep/Documents/game/projet/src/camera.h
+/home/thep/Documents/game/projet/src/camera/camera.h
 iostream
 -
 
-/home/thep/Documents/game/projet/src/camera.h
+/home/thep/Documents/game/projet/src/camera/camera.h
 irrlicht/irrlicht.h
 -
-heros.h
-/home/thep/Documents/game/projet/src/heros.h
+../entites/heros.h
+/home/thep/Documents/game/projet/src/entites/heros.h
 
-/home/thep/Documents/game/projet/src/heros.cpp
+/home/thep/Documents/game/projet/src/entites/heros.cpp
 heros.h
-/home/thep/Documents/game/projet/src/heros.h
+/home/thep/Documents/game/projet/src/entites/heros.h
 iostream
 -
 
-/home/thep/Documents/game/projet/src/heros.h
+/home/thep/Documents/game/projet/src/entites/heros.h
 personnages.h
-/home/thep/Documents/game/projet/src/personnages.h
+/home/thep/Documents/game/projet/src/entites/personnages.h
+
+/home/thep/Documents/game/projet/src/entites/personnages.cpp
+personnages.h
+/home/thep/Documents/game/projet/src/entites/personnages.h
+
+/home/thep/Documents/game/projet/src/entites/personnages.h
+irrlicht/irrlicht.h
+-
+math.h
+-
+iostream
+-
 
 /home/thep/Documents/game/projet/src/main.cpp
 irrlicht/irrlicht.h
@@ -35,10 +47,12 @@ iostream
 -
 myeventreceiver.h
 /home/thep/Documents/game/projet/src/myeventreceiver.h
-quake.h
-/home/thep/Documents/game/projet/src/quake.h
-heros.h
-/home/thep/Documents/game/projet/src/heros.h
+scenes/quake.h
+/home/thep/Documents/game/projet/src/scenes/quake.h
+entites/heros.h
+/home/thep/Documents/game/projet/src/entites/heros.h
+camera/camera.h
+/home/thep/Documents/game/projet/src/camera/camera.h
 chrono
 -
 
@@ -66,18 +80,6 @@ waterquad.h
 irrlicht/irrlicht.h
 -
 
-/home/thep/Documents/game/projet/src/mascene.cpp
-mascene.h
-/home/thep/Documents/game/projet/src/mascene.h
-heros.h
-/home/thep/Documents/game/projet/src/heros.h
-
-/home/thep/Documents/game/projet/src/mascene.h
-irrlicht/irrlicht.h
--
-heros.h
-/home/thep/Documents/game/projet/src/heros.h
-
 /home/thep/Documents/game/projet/src/myeventreceiver.cpp
 myeventreceiver.h
 /home/thep/Documents/game/projet/src/myeventreceiver.h
@@ -86,27 +88,31 @@ myeventreceiver.h
 irrlicht/irrlicht.h
 -
 
-/home/thep/Documents/game/projet/src/personnages.cpp
-personnages.h
-/home/thep/Documents/game/projet/src/personnages.h
+/home/thep/Documents/game/projet/src/scenes/mascene.cpp
+mascene.h
+/home/thep/Documents/game/projet/src/scenes/mascene.h
+../entites/heros.h
+/home/thep/Documents/game/projet/src/entites/heros.h
 
-/home/thep/Documents/game/projet/src/personnages.h
+/home/thep/Documents/game/projet/src/scenes/mascene.h
 irrlicht/irrlicht.h
 -
-math.h
--
-iostream
--
+../entites/heros.h
+/home/thep/Documents/game/projet/src/entites/heros.h
 
-/home/thep/Documents/game/projet/src/quake.cpp
+/home/thep/Documents/game/projet/src/scenes/quake.cpp
 quake.h
-/home/thep/Documents/game/projet/src/quake.h
-heros.h
-/home/thep/Documents/game/projet/src/heros.h
+/home/thep/Documents/game/projet/src/scenes/quake.h
+../entites/heros.h
+/home/thep/Documents/game/projet/src/entites/heros.h
+../camera/camera.h
+/home/thep/Documents/game/projet/src/camera/camera.h
 
-/home/thep/Documents/game/projet/src/quake.h
+/home/thep/Documents/game/projet/src/scenes/quake.h
 irrlicht/irrlicht.h
 -
 mascene.h
-/home/thep/Documents/game/projet/src/mascene.h
+/home/thep/Documents/game/projet/src/scenes/mascene.h
+../camera/camera.h
+/home/thep/Documents/game/projet/src/camera/camera.h
 

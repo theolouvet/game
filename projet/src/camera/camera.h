@@ -2,7 +2,7 @@
 #define CAMERA_H
 
 #include<irrlicht/irrlicht.h>
-#include "heros.h"
+#include "../entites/heros.h"
 
 namespace ism = irr::scene;
 namespace ic = irr::core;

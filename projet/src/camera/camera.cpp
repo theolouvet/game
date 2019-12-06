@@ -29,6 +29,7 @@ void Camera::initiateTPScam(is::IAnimatedMeshSceneNode* node){
     cam->setFarValue(10000);
     ActiveId = IdTps;
     TPS = true;
+    
 }
 
 void Camera::initiateFPScam(is::IAnimatedMeshSceneNode* node){
@@ -107,8 +108,21 @@ void Camera::switchcamtype(int type){
 }
 
 void Camera::updateTPSCam(is::IAnimatedMeshSceneNode* node){
-   cam->setTarget(node->getPosition());
+    cam->setTarget(node->getPosition());
+    ic::vector3df pos = node->getPosition();
+    float rot = node->getRotation().Y;
+    //pos.X += relatifPos.X;
+    float X = relatifPos.X;
+    float Y = relatifPos.Y;
+    float Z = relatifPos.Z;
+    float d = sqrt(pow(X,2)+pow(Y,2)+pow(Z,2));
+    pos.X -=  d*cos(2.0f * M_PI * rot/360);
+    pos.Y += relatifPos.Y;
+    pos.Z += d*sin(2.0f * M_PI * rot/360);
+    cam->setPosition(pos);
+    
 }
+
 
 void Camera::updateFPScam(is::IAnimatedMeshSceneNode* node){
     camFPS->setPosition(node->getPosition()+ ic::vector3df(-1.5,25,0));

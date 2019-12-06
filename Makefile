@@ -123,59 +123,86 @@ pgm/fast:
 	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/build
 .PHONY : pgm/fast
 
-projet/src/camera.o: projet/src/camera.cpp.o
+projet/src/camera/camera.o: projet/src/camera/camera.cpp.o
 
-.PHONY : projet/src/camera.o
-
-# target to build an object file
-projet/src/camera.cpp.o:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/camera.cpp.o
-.PHONY : projet/src/camera.cpp.o
-
-projet/src/camera.i: projet/src/camera.cpp.i
-
-.PHONY : projet/src/camera.i
-
-# target to preprocess a source file
-projet/src/camera.cpp.i:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/camera.cpp.i
-.PHONY : projet/src/camera.cpp.i
-
-projet/src/camera.s: projet/src/camera.cpp.s
-
-.PHONY : projet/src/camera.s
-
-# target to generate assembly for a file
-projet/src/camera.cpp.s:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/camera.cpp.s
-.PHONY : projet/src/camera.cpp.s
-
-projet/src/heros.o: projet/src/heros.cpp.o
-
-.PHONY : projet/src/heros.o
+.PHONY : projet/src/camera/camera.o
 
 # target to build an object file
-projet/src/heros.cpp.o:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/heros.cpp.o
-.PHONY : projet/src/heros.cpp.o
+projet/src/camera/camera.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/camera/camera.cpp.o
+.PHONY : projet/src/camera/camera.cpp.o
 
-projet/src/heros.i: projet/src/heros.cpp.i
+projet/src/camera/camera.i: projet/src/camera/camera.cpp.i
 
-.PHONY : projet/src/heros.i
+.PHONY : projet/src/camera/camera.i
 
 # target to preprocess a source file
-projet/src/heros.cpp.i:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/heros.cpp.i
-.PHONY : projet/src/heros.cpp.i
+projet/src/camera/camera.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/camera/camera.cpp.i
+.PHONY : projet/src/camera/camera.cpp.i
 
-projet/src/heros.s: projet/src/heros.cpp.s
+projet/src/camera/camera.s: projet/src/camera/camera.cpp.s
 
-.PHONY : projet/src/heros.s
+.PHONY : projet/src/camera/camera.s
 
 # target to generate assembly for a file
-projet/src/heros.cpp.s:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/heros.cpp.s
-.PHONY : projet/src/heros.cpp.s
+projet/src/camera/camera.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/camera/camera.cpp.s
+.PHONY : projet/src/camera/camera.cpp.s
+
+projet/src/entites/heros.o: projet/src/entites/heros.cpp.o
+
+.PHONY : projet/src/entites/heros.o
+
+# target to build an object file
+projet/src/entites/heros.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/entites/heros.cpp.o
+.PHONY : projet/src/entites/heros.cpp.o
+
+projet/src/entites/heros.i: projet/src/entites/heros.cpp.i
+
+.PHONY : projet/src/entites/heros.i
+
+# target to preprocess a source file
+projet/src/entites/heros.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/entites/heros.cpp.i
+.PHONY : projet/src/entites/heros.cpp.i
+
+projet/src/entites/heros.s: projet/src/entites/heros.cpp.s
+
+.PHONY : projet/src/entites/heros.s
+
+# target to generate assembly for a file
+projet/src/entites/heros.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/entites/heros.cpp.s
+.PHONY : projet/src/entites/heros.cpp.s
+
+projet/src/entites/personnages.o: projet/src/entites/personnages.cpp.o
+
+.PHONY : projet/src/entites/personnages.o
+
+# target to build an object file
+projet/src/entites/personnages.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/entites/personnages.cpp.o
+.PHONY : projet/src/entites/personnages.cpp.o
+
+projet/src/entites/personnages.i: projet/src/entites/personnages.cpp.i
+
+.PHONY : projet/src/entites/personnages.i
+
+# target to preprocess a source file
+projet/src/entites/personnages.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/entites/personnages.cpp.i
+.PHONY : projet/src/entites/personnages.cpp.i
+
+projet/src/entites/personnages.s: projet/src/entites/personnages.cpp.s
+
+.PHONY : projet/src/entites/personnages.s
+
+# target to generate assembly for a file
+projet/src/entites/personnages.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/entites/personnages.cpp.s
+.PHONY : projet/src/entites/personnages.cpp.s
 
 projet/src/main.o: projet/src/main.cpp.o
 
@@ -285,33 +312,6 @@ projet/src/map/waterquad.cpp.s:
 	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.s
 .PHONY : projet/src/map/waterquad.cpp.s
 
-projet/src/mascene.o: projet/src/mascene.cpp.o
-
-.PHONY : projet/src/mascene.o
-
-# target to build an object file
-projet/src/mascene.cpp.o:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/mascene.cpp.o
-.PHONY : projet/src/mascene.cpp.o
-
-projet/src/mascene.i: projet/src/mascene.cpp.i
-
-.PHONY : projet/src/mascene.i
-
-# target to preprocess a source file
-projet/src/mascene.cpp.i:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/mascene.cpp.i
-.PHONY : projet/src/mascene.cpp.i
-
-projet/src/mascene.s: projet/src/mascene.cpp.s
-
-.PHONY : projet/src/mascene.s
-
-# target to generate assembly for a file
-projet/src/mascene.cpp.s:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/mascene.cpp.s
-.PHONY : projet/src/mascene.cpp.s
-
 projet/src/myeventreceiver.o: projet/src/myeventreceiver.cpp.o
 
 .PHONY : projet/src/myeventreceiver.o
@@ -339,59 +339,59 @@ projet/src/myeventreceiver.cpp.s:
 	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.s
 .PHONY : projet/src/myeventreceiver.cpp.s
 
-projet/src/personnages.o: projet/src/personnages.cpp.o
+projet/src/scenes/mascene.o: projet/src/scenes/mascene.cpp.o
 
-.PHONY : projet/src/personnages.o
-
-# target to build an object file
-projet/src/personnages.cpp.o:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/personnages.cpp.o
-.PHONY : projet/src/personnages.cpp.o
-
-projet/src/personnages.i: projet/src/personnages.cpp.i
-
-.PHONY : projet/src/personnages.i
-
-# target to preprocess a source file
-projet/src/personnages.cpp.i:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/personnages.cpp.i
-.PHONY : projet/src/personnages.cpp.i
-
-projet/src/personnages.s: projet/src/personnages.cpp.s
-
-.PHONY : projet/src/personnages.s
-
-# target to generate assembly for a file
-projet/src/personnages.cpp.s:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/personnages.cpp.s
-.PHONY : projet/src/personnages.cpp.s
-
-projet/src/quake.o: projet/src/quake.cpp.o
-
-.PHONY : projet/src/quake.o
+.PHONY : projet/src/scenes/mascene.o
 
 # target to build an object file
-projet/src/quake.cpp.o:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/quake.cpp.o
-.PHONY : projet/src/quake.cpp.o
+projet/src/scenes/mascene.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o
+.PHONY : projet/src/scenes/mascene.cpp.o
 
-projet/src/quake.i: projet/src/quake.cpp.i
+projet/src/scenes/mascene.i: projet/src/scenes/mascene.cpp.i
 
-.PHONY : projet/src/quake.i
+.PHONY : projet/src/scenes/mascene.i
 
 # target to preprocess a source file
-projet/src/quake.cpp.i:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/quake.cpp.i
-.PHONY : projet/src/quake.cpp.i
+projet/src/scenes/mascene.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.i
+.PHONY : projet/src/scenes/mascene.cpp.i
 
-projet/src/quake.s: projet/src/quake.cpp.s
+projet/src/scenes/mascene.s: projet/src/scenes/mascene.cpp.s
 
-.PHONY : projet/src/quake.s
+.PHONY : projet/src/scenes/mascene.s
 
 # target to generate assembly for a file
-projet/src/quake.cpp.s:
-	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/quake.cpp.s
-.PHONY : projet/src/quake.cpp.s
+projet/src/scenes/mascene.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.s
+.PHONY : projet/src/scenes/mascene.cpp.s
+
+projet/src/scenes/quake.o: projet/src/scenes/quake.cpp.o
+
+.PHONY : projet/src/scenes/quake.o
+
+# target to build an object file
+projet/src/scenes/quake.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o
+.PHONY : projet/src/scenes/quake.cpp.o
+
+projet/src/scenes/quake.i: projet/src/scenes/quake.cpp.i
+
+.PHONY : projet/src/scenes/quake.i
+
+# target to preprocess a source file
+projet/src/scenes/quake.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.i
+.PHONY : projet/src/scenes/quake.cpp.i
+
+projet/src/scenes/quake.s: projet/src/scenes/quake.cpp.s
+
+.PHONY : projet/src/scenes/quake.s
+
+# target to generate assembly for a file
+projet/src/scenes/quake.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.s
+.PHONY : projet/src/scenes/quake.cpp.s
 
 # Help Target
 help:
@@ -402,12 +402,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... pgm"
 	@echo "... edit_cache"
-	@echo "... projet/src/camera.o"
-	@echo "... projet/src/camera.i"
-	@echo "... projet/src/camera.s"
-	@echo "... projet/src/heros.o"
-	@echo "... projet/src/heros.i"
-	@echo "... projet/src/heros.s"
+	@echo "... projet/src/camera/camera.o"
+	@echo "... projet/src/camera/camera.i"
+	@echo "... projet/src/camera/camera.s"
+	@echo "... projet/src/entites/heros.o"
+	@echo "... projet/src/entites/heros.i"
+	@echo "... projet/src/entites/heros.s"
+	@echo "... projet/src/entites/personnages.o"
+	@echo "... projet/src/entites/personnages.i"
+	@echo "... projet/src/entites/personnages.s"
 	@echo "... projet/src/main.o"
 	@echo "... projet/src/main.i"
 	@echo "... projet/src/main.s"
@@ -420,18 +423,15 @@ help:
 	@echo "... projet/src/map/waterquad.o"
 	@echo "... projet/src/map/waterquad.i"
 	@echo "... projet/src/map/waterquad.s"
-	@echo "... projet/src/mascene.o"
-	@echo "... projet/src/mascene.i"
-	@echo "... projet/src/mascene.s"
 	@echo "... projet/src/myeventreceiver.o"
 	@echo "... projet/src/myeventreceiver.i"
 	@echo "... projet/src/myeventreceiver.s"
-	@echo "... projet/src/personnages.o"
-	@echo "... projet/src/personnages.i"
-	@echo "... projet/src/personnages.s"
-	@echo "... projet/src/quake.o"
-	@echo "... projet/src/quake.i"
-	@echo "... projet/src/quake.s"
+	@echo "... projet/src/scenes/mascene.o"
+	@echo "... projet/src/scenes/mascene.i"
+	@echo "... projet/src/scenes/mascene.s"
+	@echo "... projet/src/scenes/quake.o"
+	@echo "... projet/src/scenes/quake.i"
+	@echo "... projet/src/scenes/quake.s"
 .PHONY : help
 
 

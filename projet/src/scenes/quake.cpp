@@ -1,7 +1,9 @@
 #include"quake.h"
-#include"heros.h"
+#include"../entites/heros.h"
+#include"../camera/camera.h"
 
  scene::IMeshSceneNode* q3node ;
+ Camera* camq;
 
 quake::quake(IrrlichtDevice * device):mascene(device){
      device->getFileSystem()->addFileArchive("data/dataMAP/map-20kdm2.pk3");
@@ -23,34 +25,8 @@ quake::quake(IrrlichtDevice * device):mascene(device){
         q3node->setTriangleSelector(selector);
         // We're not done with this selector yet, so don't drop it.
     }
-
-     scene::ICameraSceneNode* camera =
-    smgr->addCameraSceneNodeFPS(0, 100.0f, .3f, ID_IsNotPickable, 0, 0, true, 3.f);
-    camera->setPosition(core::vector3df(50,300,-60));
-    camera->setTarget(core::vector3df(-70,30,-60));
-
-    if (selector)
-    {
-        scene::ISceneNodeAnimator* anim = smgr->createCollisionResponseAnimator(
-            selector, camera, core::vector3df(30,50,30),
-            core::vector3df(0,-10,0), core::vector3df(0,30,0));
-        selector->drop(); // As soon as we're done with the selector, drop it.
-        camera->addAnimator(anim);
-        anim->drop();  // And likewise, drop the animator when we're done referring to it.
-    }
-     /*
-    sydney.node->setPosition(core::vector3df(50,300,-60));
-   
-
-    if (selector)
-    {
-        scene::ISceneNodeAnimator* anim = smgr->createCollisionResponseAnimator(
-            selector, sydney.node, core::vector3df(30,50,30),
-            core::vector3df(0,-10,0), core::vector3df(0,30,0));
-        selector->drop(); // As soon as we're done with the selector, drop it.
-        sydney.node->addAnimator(anim);
-        anim->drop();  // And likewise, drop the animator when we're done referring to it.
-    }*/
+    
+ 
    
 }
 
@@ -72,5 +48,23 @@ void quake::initiatedHeros(){
         selector->drop(); // As soon as we're done with the selector, drop it.
         heros->node->addAnimator(collision);
         collision->drop();  // And likewise, drop the animator when we're done referring to it.
+    }
+}
+
+void quake::setCam(Camera* cam){
+   camq = cam;
+   cam->initiateFPScam(heros->node);
+   cam->initiateTPScam(heros->node);
+   
+ 
+}
+
+void quake::draw(){
+    smgr->drawAll();
+    if(heros->node != NULL && camq != NULL){
+            if(camq->ActiveId == camq->IdFps)
+                heros->turnright(camq->camFPS->getRotation());
+            camq->updateFPScam(heros->node);
+            camq->updateTPSCam(heros->node);
     }
 }

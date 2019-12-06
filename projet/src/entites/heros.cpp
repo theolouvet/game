@@ -16,8 +16,8 @@ void Heros::avancer(){
     ic::vector3df pos = getPosition();
     ic::vector3df rot = getRotation();
     ic::vector3df mvt = ic::vector3df(0,0,0);
-    mvt.X +=  cos(2.0f * M_PI * rot.Y/360)/10;
-    mvt.Z -=  sin(2.0f * M_PI * rot.Y/360)/10;
+    mvt.X +=  cos(2.0f * M_PI * rot.Y/360);
+    mvt.Z -=  sin(2.0f * M_PI * rot.Y/360);
     node->setPosition(pos + mvt);
 }
 

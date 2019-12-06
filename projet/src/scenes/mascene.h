@@ -2,7 +2,7 @@
 #define SCENE_H
 
 #include<irrlicht/irrlicht.h>
-#include"heros.h"
+#include"../entites/heros.h"
 using namespace irr;
 using namespace core;
 using namespace scene;
@@ -19,7 +19,7 @@ private:
     
 public:
     mascene(IrrlichtDevice *);
-    void draw();
+    virtual void draw();
     void addHeros(Heros*);
 
     Heros* heros;

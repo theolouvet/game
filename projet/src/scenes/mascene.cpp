@@ -1,5 +1,5 @@
 #include"mascene.h"
-#include "heros.h"
+#include "../entites/heros.h"
 
 mascene::mascene(IrrlichtDevice *device){
    // smgr = device->getSceneManager();
