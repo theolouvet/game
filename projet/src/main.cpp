@@ -4,6 +4,7 @@
 #include "scenes/quake.h"
 #include "entites/heros.h"
 #include "camera/camera.h"
+#include "scenes/terrainscene.h"
 #include <chrono>
 
 using namespace irr;
@@ -12,8 +13,7 @@ using namespace scene;
 using namespace video;
 using namespace io;
 using namespace gui;
-std::chrono::time_point<std::chrono::system_clock> start, end;
-float t;
+
 IVideoDriver* driver;
 ISceneManager* smgr ;
 IrrlichtDevice *device;
@@ -26,6 +26,69 @@ bool keyrelease = true;
 bool freecam = false;
 irr::SKeyMap keyMap[5];
 ICameraSceneNode* camfree;
+vector3df ligth;
+std::chrono::time_point<std::chrono::system_clock> start, end;
+float test = 1.0f;
+float alphaw = 1.0;
+
+float t;
+
+scene::ISceneNode* skydome;
+terrainscene terrain ;
+
+class MyShaderCallBack2 : public video::IShaderConstantSetCallBack
+{
+public:
+    
+    virtual void OnSetConstants(video::IMaterialRendererServices* services,
+                s32 userData){
+                    video::IVideoDriver* driver = services->getVideoDriver();
+            core::matrix4 invWorld = driver->getTransform(video::ETS_WORLD);
+            invWorld.makeInverse();
+            services->setVertexShaderConstant("mInvWorld", invWorld.pointer(), 16);
+            
+            core::matrix4 worldViewProj;
+            worldViewProj = driver->getTransform(video::ETS_PROJECTION);
+            worldViewProj *= driver->getTransform(video::ETS_VIEW);
+            worldViewProj *= driver->getTransform(video::ETS_WORLD);
+            services->setVertexShaderConstant("mWorldViewProj", worldViewProj.pointer(), 16);
+        
+            // set camera position
+            skydome = terrain.skydome;
+            core::vector3df pos = device->getSceneManager()->
+                getActiveCamera()->getAbsolutePosition();
+           // ligth.rotateXZBy(skydome->getRotation().Y/180);
+            services->setVertexShaderConstant("mLightPos", reinterpret_cast<f32*>(&ligth), 3);
+            services->setVertexShaderConstant("mCamPos", reinterpret_cast<f32*>(&pos), 3);
+
+            test = terrain.test;
+            alphaw = terrain.alphaw;
+            services->setVertexShaderConstant("romain",&test, 1);
+            services->setVertexShaderConstant("alpha",&alphaw, 1);
+        
+           
+            core::matrix4 world = driver->getTransform(video::ETS_WORLD);
+            world = world.getTransposed();
+            services->setVertexShaderConstant("mTransWorld", world.pointer(), 16);
+            t= terrain.gettime();
+            services->setVertexShaderConstant("Time",&t, 1);
+
+
+            s32 TextureLayerID = 0;
+            s32 TextureLayerID1 = 1;
+            s32 TextureLayerID2 = 2;
+            s32 TextureLayerID3 = 3;    
+            services->setPixelShaderConstant("myTexture", &TextureLayerID, 1);
+            services->setPixelShaderConstant("myTexture2", &TextureLayerID1, 1);
+            services->setPixelShaderConstant("myTexture3", &TextureLayerID2, 1);
+            services->setPixelShaderConstant("myTexture4", &TextureLayerID3, 1);
+                };
+   
+
+private:
+    
+};
+
 
 
 void keyreception(){
@@ -85,7 +148,7 @@ int main()
 	device->setWindowCaption(L"game");
 	driver = device->getVideoDriver();
 	smgr = device->getSceneManager();
-
+/*
     sydney = Heros();
     IAnimatedMesh* heros_mesh = smgr ->getMesh("media/sydney.md2");
 	
@@ -95,7 +158,7 @@ int main()
 	q.initiatedHeros();
     
 	sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
-
+*/
 	keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
     keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
     keyMap[1].Action = irr::EKA_MOVE_BACKWARD; // reculer
@@ -117,30 +180,28 @@ int main()
     camfree->setFarValue(30000.0f);
 
 
-    cam = Camera(q.smgr);
+ /*   cam = Camera(q.smgr);
     cam.initiateFPScam(sydney.node);
-    cam.initiateTPScam(sydney.node);
-    q.setCam(&cam);
+    cam.initiateTPScam(sydney.node);*/
+  //  q.setCam(&cam);
+    MyShaderCallBack2 mc;
+    terrain = terrainscene(device, &mc);
+    ligth = terrain.getligth();
+
 
 	
-	device -> setInputReceivingSceneManager(q.smgr);
+	//device -> setInputReceivingSceneManager(q.smgr);
+    device -> setInputReceivingSceneManager(terrain.smgr);
 
 	int lastFPS = -1;
 	while(device->run())
 	{
 		driver->beginScene(true, true, SColor(255,100,101,140));
-        q.draw();
-        //smgr->drawAll();	
-        keyreception();
+       // q.draw();
+        terrain.draw();
+      //  keyreception();
 		driver->endScene();
-		//sydney.avancer();
-
-      /*  if(sydney.node != NULL){
-            if(cam.ActiveId == cam.IdFps)
-                sydney.turnright(cam.camFPS->getRotation());
-            cam.updateFPScam(sydney.node);
-            cam.updateTPSCam(sydney.node);
-        }*/
+	
 		
         int fps = driver->getFPS();
         if (lastFPS != fps)

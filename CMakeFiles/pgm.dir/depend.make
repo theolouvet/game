@@ -17,9 +17,12 @@ CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/camera/camera.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/entites/heros.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/entites/personnages.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/main.cpp
+CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/map/myterrain.h
+CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/map/waterquad.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/myeventreceiver.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/scenes/mascene.h
 CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/scenes/quake.h
+CMakeFiles/pgm.dir/projet/src/main.cpp.o: projet/src/scenes/terrainscene.h
 
 CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o: projet/src/map/myterrain.cpp
 CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o: projet/src/map/myterrain.h
@@ -44,4 +47,13 @@ CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/entites/personnages
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/scenes/mascene.h
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/scenes/quake.cpp
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/scenes/quake.h
+
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/camera/camera.h
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/entites/heros.h
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/entites/personnages.h
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/map/myterrain.h
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/map/waterquad.h
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/scenes/mascene.h
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/scenes/terrainscene.cpp
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/scenes/terrainscene.h
 

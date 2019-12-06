@@ -393,6 +393,33 @@ projet/src/scenes/quake.cpp.s:
 	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.s
 .PHONY : projet/src/scenes/quake.cpp.s
 
+projet/src/scenes/terrainscene.o: projet/src/scenes/terrainscene.cpp.o
+
+.PHONY : projet/src/scenes/terrainscene.o
+
+# target to build an object file
+projet/src/scenes/terrainscene.cpp.o:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o
+.PHONY : projet/src/scenes/terrainscene.cpp.o
+
+projet/src/scenes/terrainscene.i: projet/src/scenes/terrainscene.cpp.i
+
+.PHONY : projet/src/scenes/terrainscene.i
+
+# target to preprocess a source file
+projet/src/scenes/terrainscene.cpp.i:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.i
+.PHONY : projet/src/scenes/terrainscene.cpp.i
+
+projet/src/scenes/terrainscene.s: projet/src/scenes/terrainscene.cpp.s
+
+.PHONY : projet/src/scenes/terrainscene.s
+
+# target to generate assembly for a file
+projet/src/scenes/terrainscene.cpp.s:
+	$(MAKE) -f CMakeFiles/pgm.dir/build.make CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.s
+.PHONY : projet/src/scenes/terrainscene.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -432,6 +459,9 @@ help:
 	@echo "... projet/src/scenes/quake.o"
 	@echo "... projet/src/scenes/quake.i"
 	@echo "... projet/src/scenes/quake.s"
+	@echo "... projet/src/scenes/terrainscene.o"
+	@echo "... projet/src/scenes/terrainscene.i"
+	@echo "... projet/src/scenes/terrainscene.s"
 .PHONY : help
 
 

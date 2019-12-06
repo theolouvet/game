@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/thep/Documents/game/projet/src/myeventreceiver.cpp" "/home/thep/Documents/game/CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o"
   "/home/thep/Documents/game/projet/src/scenes/mascene.cpp" "/home/thep/Documents/game/CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o"
   "/home/thep/Documents/game/projet/src/scenes/quake.cpp" "/home/thep/Documents/game/CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o"
+  "/home/thep/Documents/game/projet/src/scenes/terrainscene.cpp" "/home/thep/Documents/game/CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

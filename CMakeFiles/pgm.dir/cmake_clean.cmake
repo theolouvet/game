@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o"
   "CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o"
   "CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o"
+  "CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o"
   "pgm.pdb"
   "pgm"
 )

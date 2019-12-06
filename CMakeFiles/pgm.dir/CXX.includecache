@@ -53,6 +53,8 @@ entites/heros.h
 /home/thep/Documents/game/projet/src/entites/heros.h
 camera/camera.h
 /home/thep/Documents/game/projet/src/camera/camera.h
+scenes/terrainscene.h
+/home/thep/Documents/game/projet/src/scenes/terrainscene.h
 chrono
 -
 
@@ -75,6 +77,8 @@ irrlicht/irrlicht.h
 /home/thep/Documents/game/projet/src/map/waterquad.cpp
 waterquad.h
 /home/thep/Documents/game/projet/src/map/waterquad.h
+iostream
+-
 
 /home/thep/Documents/game/projet/src/map/waterquad.h
 irrlicht/irrlicht.h
@@ -115,4 +119,20 @@ mascene.h
 /home/thep/Documents/game/projet/src/scenes/mascene.h
 ../camera/camera.h
 /home/thep/Documents/game/projet/src/camera/camera.h
+
+/home/thep/Documents/game/projet/src/scenes/terrainscene.cpp
+terrainscene.h
+/home/thep/Documents/game/projet/src/scenes/terrainscene.h
+
+/home/thep/Documents/game/projet/src/scenes/terrainscene.h
+mascene.h
+/home/thep/Documents/game/projet/src/scenes/mascene.h
+../camera/camera.h
+/home/thep/Documents/game/projet/src/camera/camera.h
+../map/myterrain.h
+/home/thep/Documents/game/projet/src/map/myterrain.h
+../map/waterquad.h
+/home/thep/Documents/game/projet/src/map/waterquad.h
+chrono
+-
 

@@ -18,9 +18,12 @@ CMakeFiles/pgm.dir/projet/src/main.cpp.o
  /home/thep/Documents/game/projet/src/entites/heros.h
  /home/thep/Documents/game/projet/src/entites/personnages.h
  /home/thep/Documents/game/projet/src/main.cpp
+ /home/thep/Documents/game/projet/src/map/myterrain.h
+ /home/thep/Documents/game/projet/src/map/waterquad.h
  /home/thep/Documents/game/projet/src/myeventreceiver.h
  /home/thep/Documents/game/projet/src/scenes/mascene.h
  /home/thep/Documents/game/projet/src/scenes/quake.h
+ /home/thep/Documents/game/projet/src/scenes/terrainscene.h
 CMakeFiles/pgm.dir/projet/src/map/myterrain.cpp.o
  /home/thep/Documents/game/projet/src/map/myterrain.cpp
  /home/thep/Documents/game/projet/src/map/myterrain.h
@@ -45,3 +48,12 @@ CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o
  /home/thep/Documents/game/projet/src/scenes/mascene.h
  /home/thep/Documents/game/projet/src/scenes/quake.cpp
  /home/thep/Documents/game/projet/src/scenes/quake.h
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o
+ /home/thep/Documents/game/projet/src/camera/camera.h
+ /home/thep/Documents/game/projet/src/entites/heros.h
+ /home/thep/Documents/game/projet/src/entites/personnages.h
+ /home/thep/Documents/game/projet/src/map/myterrain.h
+ /home/thep/Documents/game/projet/src/map/waterquad.h
+ /home/thep/Documents/game/projet/src/scenes/mascene.h
+ /home/thep/Documents/game/projet/src/scenes/terrainscene.cpp
+ /home/thep/Documents/game/projet/src/scenes/terrainscene.h
