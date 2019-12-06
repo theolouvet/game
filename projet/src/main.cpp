@@ -5,6 +5,7 @@
 #include "entites/heros.h"
 #include "camera/camera.h"
 #include "scenes/terrainscene.h"
+#include <map>
 #include <chrono>
 
 using namespace irr;
@@ -31,10 +32,18 @@ std::chrono::time_point<std::chrono::system_clock> start, end;
 float test = 1.0f;
 float alphaw = 1.0;
 
+const static int qId = 102;
+const static int tId = 201;
+
 float t;
 
 scene::ISceneNode* skydome;
 terrainscene terrain ;
+mascene* drawscene;
+quake q;
+std::map<int,std::pair<mascene*,bool>> scenes;
+
+void switchScenes();
 
 class MyShaderCallBack2 : public video::IShaderConstantSetCallBack
 {
@@ -89,7 +98,7 @@ private:
     
 };
 
-
+MyShaderCallBack2 mc;
 
 void keyreception(){
     
@@ -131,10 +140,62 @@ void keyreception(){
         if(receiver.IsKeyDown(KEY_KEY_W)){
             device->drop();
         }
+
+         if(receiver.IsKeyDown(KEY_KEY_L)){
+            switchScenes();
+        }
     
 
 }
 
+void initiateQuakeScene(bool active){
+    q = quake(device);
+	q.addHeros(&sydney);
+	q.initiatedHeros();
+    cam = Camera(q.smgr);
+    cam.initiateFPScam(sydney.node);
+    cam.initiateTPScam(sydney.node);
+    q.setCam(&cam);
+    scenes.insert(std::make_pair(qId, std::make_pair(&q,active)));
+    sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
+}
+
+void initiateTerrain(bool active){
+    
+    terrain = terrainscene(device, &mc);
+    ligth = terrain.getligth();
+    scenes.insert(std::make_pair(tId,std::make_pair(&terrain,active)));
+}
+
+void initiateScenes(){
+    initiateTerrain(false);
+    initiateQuakeScene(true);
+    for(auto it = scenes.begin(); it != scenes.end(); ++it){
+        if(it->second.second){
+            device -> setInputReceivingSceneManager(it->second.first->smgr);
+            drawscene = it->second.first;
+        }
+    }
+}
+
+void switchScenes(){
+        bool b = false;
+       for(auto it = scenes.begin(); it != scenes.end(); ++it){
+        if(!it->second.second && !b){
+            device->sleep(1000);
+            device -> setInputReceivingSceneManager(it->second.first->smgr);
+            drawscene = it->second.first;
+            it->second.second = true;
+            b = true;
+        }else{
+            it->second.second = false;
+        }
+    }
+     for(auto it = scenes.begin(); it != scenes.end(); ++it){
+         std::cout<<"scenes: "<<it->first<<" etat "<<it->second.second<<std::endl;
+     }
+
+}
 
 int main()
 {
@@ -148,17 +209,12 @@ int main()
 	device->setWindowCaption(L"game");
 	driver = device->getVideoDriver();
 	smgr = device->getSceneManager();
-/*
+ 
     sydney = Heros();
-    IAnimatedMesh* heros_mesh = smgr ->getMesh("media/sydney.md2");
+    IAnimatedMesh* heros_mesh = smgr ->getMesh("media/sydney.md2"); 
 	
+   
 
-    quake q = quake(device);
-	q.addHeros(&sydney);
-	q.initiatedHeros();
-    
-	sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
-*/
 	keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
     keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
     keyMap[1].Action = irr::EKA_MOVE_BACKWARD; // reculer
@@ -179,27 +235,16 @@ int main()
     );
     camfree->setFarValue(30000.0f);
 
-
- /*   cam = Camera(q.smgr);
-    cam.initiateFPScam(sydney.node);
-    cam.initiateTPScam(sydney.node);*/
-  //  q.setCam(&cam);
-    MyShaderCallBack2 mc;
-    terrain = terrainscene(device, &mc);
-    ligth = terrain.getligth();
-
-
-	
-	//device -> setInputReceivingSceneManager(q.smgr);
-    device -> setInputReceivingSceneManager(terrain.smgr);
+    initiateScenes();   
 
 	int lastFPS = -1;
 	while(device->run())
 	{
 		driver->beginScene(true, true, SColor(255,100,101,140));
-       // q.draw();
-        terrain.draw();
-      //  keyreception();
+        drawscene->draw();
+        //q.draw();
+        //terrain.draw();
+        keyreception();
 		driver->endScene();
 	
 		

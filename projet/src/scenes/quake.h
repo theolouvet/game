@@ -10,6 +10,7 @@ class quake : public mascene
 private:
     /* data */
 public:
+    quake():mascene(){};
     quake(IrrlichtDevice *);
     void initiatedHeros();
     void setCam(Camera*);
