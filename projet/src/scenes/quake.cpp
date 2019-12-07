@@ -27,6 +27,34 @@ quake::quake(IrrlichtDevice * device):mascene(device){
         q3node->setTriangleSelector(selector);
         // We're not done with this selector yet, so don't drop it.
     }
+
+    scene::IBillboardSceneNode* bill = 0;
+    core::vector3df waypoint[2];
+	waypoint[0].set(-150,40,100);
+	waypoint[1].set(350,40,100);
+    // create animation for portals;
+    scene::ISceneNodeAnimator* anim = 0;
+	core::array<video::ITexture*> textures;
+	for (s32 g=1; g<8; ++g)
+	{
+		core::stringc tmp("media/portal");
+		tmp += g;
+		tmp += ".bmp";
+		video::ITexture* t = device->getVideoDriver()->getTexture( tmp );
+		textures.push_back(t);
+	}
+
+	anim = smgr->createTextureAnimator(textures, 100);
+	for(int r=0; r<2; ++r)
+	{
+		bill = smgr->addBillboardSceneNode(0, core::dimension2d<f32>(100,100),
+			waypoint[r]+ core::vector3df(0,20,0));
+		bill->setMaterialFlag(video::EMF_LIGHTING, false);
+		bill->setMaterialTexture(0, device->getVideoDriver()->getTexture("media/portal1.bmp"));
+		bill->setMaterialType(video::EMT_TRANSPARENT_ADD_COLOR);
+		bill->addAnimator(anim);
+        bill->setPosition(ic::vector3df(-1365.35,-156.458,-2897.09));
+	}
     
     
         start = std::chrono::system_clock::now();
@@ -37,7 +65,7 @@ void quake::initiatedHeros(){
     IAnimatedMesh* heros_mesh = smgr ->getMesh("media/sydney.md2");
     heros->node = smgr->addAnimatedMeshSceneNode(heros_mesh,0,IDFlag_IsPickable);
     
-    heros->node->setPosition(q3node->getPosition() + vector3df(-7,0,-1491));
+    heros->node->setPosition(ic::vector3df(-1365.35,-156.458,-3333.88));
     ITriangleSelector* selector = q3node -> getTriangleSelector();
      ic::vector3df edges[8];
     heros->node->getTransformedBoundingBox().getEdges(edges);
@@ -54,12 +82,15 @@ void quake::initiatedHeros(){
     }
 }
 
+void quake::freecamera(){
+    ICameraSceneNode* camf = smgr->addCameraSceneNodeFPS(0);
+    camf->setPosition(ic::vector3df(-1328,-195,-2978));
+}
+
 void quake::setCam(Camera* cam){
    camq = cam;
    cam->initiateFPScam(heros->node);
-   cam->initiateTPScam(heros->node);
-   
- 
+   cam->initiateTPScam(heros->node); 
 }
 
 void quake::draw(){

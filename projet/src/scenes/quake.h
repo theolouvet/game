@@ -18,6 +18,7 @@ public:
     void initiatedHeros();
     void setCam(Camera*);
     void draw() override;
+    void freecamera();
 };
 
 #endif

@@ -150,7 +150,7 @@ void keyreception(){
         }
 
         if(receiver.IsKeyDown(KEY_KEY_N)){
-            vector3df p = sydney.getPosition();
+            vector3df p = drawscene->smgr->getActiveCamera()->getPosition();
             std::cout<<"X "<<p.X<<" y "<<p.Y<<" z "<<p.Z<<std::endl;
         }
     
@@ -167,6 +167,7 @@ void initiateQuakeScene(bool active){
     q.setCam(&cam);
     scenes.insert(std::make_pair(qId, std::make_pair(&q,active)));
     sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
+    q.freecamera();
 }
 
 void initiateTerrain(bool active){
@@ -177,11 +178,8 @@ void initiateTerrain(bool active){
 }
 
 void initiateScenes(){
-    std::cout<<"brhnegzbprogrhepgprezhog"<<std::endl;
     initiateTerrain(false);
-    std::cout<<"brhnegzbprogrhepgprezhog fin terrain"<<std::endl;
     initiateQuakeScene(true);
-    std::cout<<"brhnegzbprogrhepgprezhog fin quake"<<std::endl;
     for(auto it = scenes.begin(); it != scenes.end(); ++it){
         if(it->second.second){
             device -> setInputReceivingSceneManager(it->second.first->smgr);
@@ -218,7 +216,6 @@ int main()
 			false, false, false, &receiver);
 	if (!device)
 		return 1;
-    std::cout<<"brhnegzbprogrhepgprezhog"<<std::endl;
 	device->setWindowCaption(L"game");
 	driver = device->getVideoDriver();
 	smgr = device->getSceneManager();
