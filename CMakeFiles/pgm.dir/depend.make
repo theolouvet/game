@@ -5,10 +5,12 @@ CMakeFiles/pgm.dir/projet/src/camera/camera.cpp.o: projet/src/camera/camera.cpp
 CMakeFiles/pgm.dir/projet/src/camera/camera.cpp.o: projet/src/camera/camera.h
 CMakeFiles/pgm.dir/projet/src/camera/camera.cpp.o: projet/src/entites/heros.h
 CMakeFiles/pgm.dir/projet/src/camera/camera.cpp.o: projet/src/entites/personnages.h
+CMakeFiles/pgm.dir/projet/src/camera/camera.cpp.o: projet/src/myeventreceiver.h
 
 CMakeFiles/pgm.dir/projet/src/entites/heros.cpp.o: projet/src/entites/heros.cpp
 CMakeFiles/pgm.dir/projet/src/entites/heros.cpp.o: projet/src/entites/heros.h
 CMakeFiles/pgm.dir/projet/src/entites/heros.cpp.o: projet/src/entites/personnages.h
+CMakeFiles/pgm.dir/projet/src/entites/heros.cpp.o: projet/src/myeventreceiver.h
 
 CMakeFiles/pgm.dir/projet/src/entites/personnages.cpp.o: projet/src/entites/personnages.cpp
 CMakeFiles/pgm.dir/projet/src/entites/personnages.cpp.o: projet/src/entites/personnages.h
@@ -38,12 +40,14 @@ CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o: projet/src/myeventreceiver.
 
 CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o: projet/src/entites/heros.h
 CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o: projet/src/entites/personnages.h
+CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o: projet/src/myeventreceiver.h
 CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o: projet/src/scenes/mascene.cpp
 CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o: projet/src/scenes/mascene.h
 
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/camera/camera.h
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/entites/heros.h
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/entites/personnages.h
+CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/myeventreceiver.h
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/scenes/mascene.h
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/scenes/quake.cpp
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o: projet/src/scenes/quake.h
@@ -53,6 +57,7 @@ CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/entites/hero
 CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/entites/personnages.h
 CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/map/myterrain.h
 CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/map/waterquad.h
+CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/myeventreceiver.h
 CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/scenes/mascene.h
 CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/scenes/terrainscene.cpp
 CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o: projet/src/scenes/terrainscene.h

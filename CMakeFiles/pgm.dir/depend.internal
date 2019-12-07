@@ -6,10 +6,12 @@ CMakeFiles/pgm.dir/projet/src/camera/camera.cpp.o
  /home/thep/Documents/game/projet/src/camera/camera.h
  /home/thep/Documents/game/projet/src/entites/heros.h
  /home/thep/Documents/game/projet/src/entites/personnages.h
+ /home/thep/Documents/game/projet/src/myeventreceiver.h
 CMakeFiles/pgm.dir/projet/src/entites/heros.cpp.o
  /home/thep/Documents/game/projet/src/entites/heros.cpp
  /home/thep/Documents/game/projet/src/entites/heros.h
  /home/thep/Documents/game/projet/src/entites/personnages.h
+ /home/thep/Documents/game/projet/src/myeventreceiver.h
 CMakeFiles/pgm.dir/projet/src/entites/personnages.cpp.o
  /home/thep/Documents/game/projet/src/entites/personnages.cpp
  /home/thep/Documents/game/projet/src/entites/personnages.h
@@ -39,12 +41,14 @@ CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o
 CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o
  /home/thep/Documents/game/projet/src/entites/heros.h
  /home/thep/Documents/game/projet/src/entites/personnages.h
+ /home/thep/Documents/game/projet/src/myeventreceiver.h
  /home/thep/Documents/game/projet/src/scenes/mascene.cpp
  /home/thep/Documents/game/projet/src/scenes/mascene.h
 CMakeFiles/pgm.dir/projet/src/scenes/quake.cpp.o
  /home/thep/Documents/game/projet/src/camera/camera.h
  /home/thep/Documents/game/projet/src/entites/heros.h
  /home/thep/Documents/game/projet/src/entites/personnages.h
+ /home/thep/Documents/game/projet/src/myeventreceiver.h
  /home/thep/Documents/game/projet/src/scenes/mascene.h
  /home/thep/Documents/game/projet/src/scenes/quake.cpp
  /home/thep/Documents/game/projet/src/scenes/quake.h
@@ -54,6 +58,7 @@ CMakeFiles/pgm.dir/projet/src/scenes/terrainscene.cpp.o
  /home/thep/Documents/game/projet/src/entites/personnages.h
  /home/thep/Documents/game/projet/src/map/myterrain.h
  /home/thep/Documents/game/projet/src/map/waterquad.h
+ /home/thep/Documents/game/projet/src/myeventreceiver.h
  /home/thep/Documents/game/projet/src/scenes/mascene.h
  /home/thep/Documents/game/projet/src/scenes/terrainscene.cpp
  /home/thep/Documents/game/projet/src/scenes/terrainscene.h

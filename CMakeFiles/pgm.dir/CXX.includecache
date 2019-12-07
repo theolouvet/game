@@ -27,6 +27,10 @@ iostream
 /home/thep/Documents/game/projet/src/entites/heros.h
 personnages.h
 /home/thep/Documents/game/projet/src/entites/personnages.h
+irrlicht/irrlicht.h
+-
+../myeventreceiver.h
+/home/thep/Documents/game/projet/src/myeventreceiver.h
 
 /home/thep/Documents/game/projet/src/entites/personnages.cpp
 personnages.h
@@ -63,6 +67,8 @@ chrono
 /home/thep/Documents/game/projet/src/map/myterrain.cpp
 myterrain.h
 /home/thep/Documents/game/projet/src/map/myterrain.h
+iostream
+-
 
 /home/thep/Documents/game/projet/src/map/myterrain.h
 irrlicht/irrlicht.h
@@ -109,6 +115,8 @@ irrlicht/irrlicht.h
 /home/thep/Documents/game/projet/src/scenes/quake.cpp
 quake.h
 /home/thep/Documents/game/projet/src/scenes/quake.h
+iostream
+-
 ../entites/heros.h
 /home/thep/Documents/game/projet/src/entites/heros.h
 ../camera/camera.h
@@ -121,6 +129,8 @@ mascene.h
 /home/thep/Documents/game/projet/src/scenes/mascene.h
 ../camera/camera.h
 /home/thep/Documents/game/projet/src/camera/camera.h
+chrono
+-
 
 /home/thep/Documents/game/projet/src/scenes/terrainscene.cpp
 terrainscene.h

@@ -65,6 +65,26 @@ terrainscene::terrainscene(IrrlichtDevice* device, IShaderConstantSetCallBack* m
    
     start = std::chrono::system_clock::now();
 
+     device->getFileSystem()->addFileArchive("data/AspecQ3compet2.pk3");
+  //  scene::IAnimatedMesh* q3levelmesh = smgr->getMesh("20kdm2.bsp");
+  scene::IAnimatedMesh* q3levelmesh = smgr->getMesh("AspecQ3compet2.bsp");
+   scene::IMeshSceneNode* q3node = 0;
+
+    // The Quake mesh is pickable, but doesn't get highlighted.
+    if (q3levelmesh)
+        q3node = smgr->addOctreeSceneNode(q3levelmesh->getMesh(0), 0, IDFlag_IsPickable);
+      scene::ITriangleSelector* selector = 0;
+
+    if (q3node)
+    {
+        q3node->setPosition(core::vector3df(0,100,0));
+
+        selector = smgr->createOctreeTriangleSelector(
+                q3node->getMesh(), q3node);
+        q3node->setTriangleSelector(selector);
+        // We're not done with this selector yet, so don't drop it.
+    }
+
   
 
 }

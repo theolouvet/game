@@ -1,0 +1,61 @@
+Gael Romanet Artworks : Maps, Textures, Tu'torials, Web sites, &+
+
+
+web site:  http://a-spec-maps.com/
+
+
+map:       AspecQ3compet2
+longname:  DEPRIVATION OF LOVE
+fraglimit: 15
+type:      ffa tourney
+
+info:      The map works only with Quake III Arena version 1.32c
+
+
+contact:   ROMANET_Gael@hotmail.fr
+
+
+ROMANET Gael
+FRANCE
+25290 Scey-en-varais
+08 Rue d'ANVERS
+
+---------------
+
+NoGhost Mapping Competition for Quake 3 Arena
+
+Mappers from the community are encouraged to participate in this competition; both veteran mappers and those looking to get into mapping are welcome to join in on the fun. Prizes will be awarded to the best maps and be judged by the community and players.
+
+:: Official start: November 1st, 2009 and will run for 6 weeks until midnight December 12th
+We've begun! You can see the competition status at the NoGhost.net forums
+Registration is closed; Good luck to the participants!
+	  	
+:: Prizes and Sponsors
+
+    * -1st Place: AMD Phenom™ II X4 965 Black Edition Processor and Sapphire Radeon HD 5850 Graphics Card
+    * -2nd Place: AMD Phenom™ II X4 965 Black Edition Processor and Sapphire Radeon HD 4650 Graphics Card
+    * -3rd Place: Sapphire Pure 950W Power Supply
+
+    * -Sponsored by: AMD, ATI, Sapphire, NoGhost.net and Maverick Servers
+
+
+:: Rules
+
+    * -The map should hold at least 8 players (suitable for 8 player FFA or 4v4 TDM/CTF) or 2 players for a 1v1 map
+    * -All maps are judged on the same scale, so a smaller map will be held to same to the same quality standards as larger maps
+    * -Doesn't necessarily have to support a specific gametype or mod, but you are welcome to specify one
+    * -Map must contain sponsor images; downloadable here
+    * -Map must be previously unreleased or a new design; please no map remakes or edits
+    * -A majority of the map should be indoors; please no maps without walls or a ceiling/roof, i.e. space maps like Q3DM17
+    * -Custom textures are allowed; participants need to make sure all textures are legal to use in this competition
+    * -Maps should be designed for normal all-weapon play
+    * -Each participant is allowed to only submit one map and the .map file should be released with the final .pk3 of the map when submitted to the judges for the final judging (the .map file will *not* be distributed except to judges)
+    * -Once a map is created play testing and posting screenshots is allowed and encouraged
+
+
+:: Judging
+
+    * -Will be done by a panel of experienced players who are familiar with that map's chosen audience (ie: a CPM map is judged by CPM players, a CTF map is judged by CTF players, etc)
+    * -Scored on gameplay/design, overall looks, creativity, and layout
+    * -Will occur from December 13th to the 19th; winners will be announced immediately afterwards right here
+    * -Judges so far: Karol "Hell5pawn" Zagórski from NoGhost.net, Anthem from Team Event Horizon, Tig from lvlworld.com, Valentino "kEy21" Viglione a Quake 3 Clanbase admin, Hipshot from zfight.com, and Adam "SyncError" Pyle from id Software

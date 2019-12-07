@@ -1,11 +1,12 @@
 #include"myterrain.h"
-
+#include<iostream>
 myterrain::myterrain(){
 
 }
 
 void myterrain::terrainHM(ISceneManager* smgr,
 const io::path& heightMapFileName){
+    std::cout<<"generation terrain"<<std::endl;
     monterrain = smgr->addTerrainSceneNode(
         heightMapFileName,
         0,                  // parent node
@@ -72,6 +73,8 @@ void myterrain::addskybox(ISceneManager* smgr, IVideoDriver* driver){
         skydome=smgr->addSkyDomeSceneNode(
             driver->getTexture("data/datasky/skydome.jpg"),30,8,0.96f,2.f);
        driver->setTextureCreationFlag(video::ETCF_CREATE_MIP_MAPS, true);
+
+       
 }
 
 void myterrain::createTriangleSelector(){

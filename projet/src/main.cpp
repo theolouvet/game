@@ -107,8 +107,9 @@ void keyreception(){
     if(receiver.IsKeyDown(KEY_KEY_P) ){
         keyrelease =! keyrelease;
         cam.switchView();
-    }	
-        if(receiver.IsKeyDown(KEY_KEY_Z)){
+    }
+    sydney.keyreception(&receiver);	
+ /*       if(receiver.IsKeyDown(KEY_KEY_Z)){
             if(sydney.node != NULL)
                 sydney.avancer();
             cam.updateCamera(&sydney);
@@ -126,6 +127,9 @@ void keyreception(){
             cam.updateCamera(&sydney);
             ani = true;
         }
+        if(receiver.IsKeyDown(KEY_SPACE)){
+
+        }
         if((receiver.IsKeyDown(KEY_KEY_A) ||
            receiver.IsKeyDown(KEY_KEY_Z) ||
            receiver.IsKeyDown(KEY_KEY_E) ||
@@ -134,7 +138,7 @@ void keyreception(){
         }else
         {
             sydney.stand();
-        }
+        }*/
         
         
         if(receiver.IsKeyDown(KEY_KEY_W)){
@@ -144,13 +148,18 @@ void keyreception(){
          if(receiver.IsKeyDown(KEY_KEY_L)){
             switchScenes();
         }
+
+        if(receiver.IsKeyDown(KEY_KEY_N)){
+            vector3df p = sydney.getPosition();
+            std::cout<<"X "<<p.X<<" y "<<p.Y<<" z "<<p.Z<<std::endl;
+        }
     
 
 }
 
 void initiateQuakeScene(bool active){
-    q = quake(device);
-	q.addHeros(&sydney);
+    q = quake(device);   
+	q.addHeros(&sydney); 
 	q.initiatedHeros();
     cam = Camera(q.smgr);
     cam.initiateFPScam(sydney.node);
@@ -168,8 +177,11 @@ void initiateTerrain(bool active){
 }
 
 void initiateScenes(){
+    std::cout<<"brhnegzbprogrhepgprezhog"<<std::endl;
     initiateTerrain(false);
+    std::cout<<"brhnegzbprogrhepgprezhog fin terrain"<<std::endl;
     initiateQuakeScene(true);
+    std::cout<<"brhnegzbprogrhepgprezhog fin quake"<<std::endl;
     for(auto it = scenes.begin(); it != scenes.end(); ++it){
         if(it->second.second){
             device -> setInputReceivingSceneManager(it->second.first->smgr);
@@ -206,6 +218,7 @@ int main()
 			false, false, false, &receiver);
 	if (!device)
 		return 1;
+    std::cout<<"brhnegzbprogrhepgprezhog"<<std::endl;
 	device->setWindowCaption(L"game");
 	driver = device->getVideoDriver();
 	smgr = device->getSceneManager();
@@ -213,7 +226,7 @@ int main()
     sydney = Heros();
     IAnimatedMesh* heros_mesh = smgr ->getMesh("media/sydney.md2"); 
 	
-   
+   std::cout<<"brhnegzbprogrhepgprezhog"<<std::endl;
 
 	keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
     keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
@@ -234,19 +247,30 @@ int main()
     5
     );
     camfree->setFarValue(30000.0f);
-
+    std::cout<<"brhnegzbprogrhepgprezhog"<<std::endl;
     initiateScenes();   
 
+    sydney.anim->setGravity(vector3df(0,-10,0));
 	int lastFPS = -1;
+    std::cout<<"brhnegzbprogrhepgprezhog"<<std::endl;
+    std::cout<<"tess   "<<std::endl;
+    std::cout<<"tess   "<< sydney.anim->collisionOccurred()<<std::endl;
+    sydney.anim->collisionOccurred();
+    std::setvbuf(stdout, NULL, _IONBF, 0);
+    int testtins = 0;
 	while(device->run())
 	{
 		driver->beginScene(true, true, SColor(255,100,101,140));
         drawscene->draw();
-        //q.draw();
-        //terrain.draw();
+
         keyreception();
+
+       
+      
+        
+
 		driver->endScene();
-	
+        
 		
         int fps = driver->getFPS();
         if (lastFPS != fps)

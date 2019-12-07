@@ -44,6 +44,7 @@
         "list": "cpp",
         "iterator": "cpp",
         "map": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "hash_map": "cpp"
     }
 }
