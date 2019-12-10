@@ -36,3 +36,10 @@ void Personnages::addcolision(is::ITriangleSelector* selector, is::ISceneManager
     m_collision->drop();
 }
 
+void Personnages::setMesh(is::IAnimatedMesh* m){
+    mesh = m;
+}
+
+is::IAnimatedMesh* Personnages::getMesh(){
+    return mesh;
+}

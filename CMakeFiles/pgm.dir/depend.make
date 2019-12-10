@@ -38,6 +38,7 @@ CMakeFiles/pgm.dir/projet/src/map/waterquad.cpp.o: projet/src/map/waterquad.h
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o: projet/src/myeventreceiver.cpp
 CMakeFiles/pgm.dir/projet/src/myeventreceiver.cpp.o: projet/src/myeventreceiver.h
 
+CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o: projet/src/camera/camera.h
 CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o: projet/src/entites/heros.h
 CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o: projet/src/entites/personnages.h
 CMakeFiles/pgm.dir/projet/src/scenes/mascene.cpp.o: projet/src/myeventreceiver.h

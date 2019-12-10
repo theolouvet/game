@@ -12,11 +12,12 @@ private:
     /* data */
     std::chrono::time_point<std::chrono::system_clock> start, end;
     float dt = -1;
+    IMetaTriangleSelector* metaselector;
+    scene::IBillboardSceneNode* bill;
 public:
     quake():mascene(){};
     quake(IrrlichtDevice *);
     void initiatedHeros();
-    void setCam(Camera*);
     void draw() override;
     void freecamera();
 };

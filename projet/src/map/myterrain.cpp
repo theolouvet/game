@@ -32,20 +32,7 @@ void myterrain::setMaterialFlag(video::E_MATERIAL_FLAG ef, bool b){
 void myterrain::setMaterialType(video::E_MATERIAL_TYPE et){
       monterrain->setMaterialType(et);
 }
-/*
-void myterrain::myShaders(io::path vs, io::path fs, video::IGPUProgrammingServices* gpu){
-    MyShaderCallBack* mc = new MyShaderCallBack();
-    s32 newMaterialType1 = 0;
 
-    // create material from high level shaders (hlsl, glsl or cg)
-
-    newMaterialType1 = gpu->addHighLevelShaderMaterialFromFiles(
-        vs, "vertexMain", video::EVST_VS_1_1,
-        fs, "pixelMain", video::EPST_PS_1_1,
-        mc, video::EMT_SOLID, 0, shadingLanguage);
-    setMaterialType((video::E_MATERIAL_TYPE)newMaterialType1);
-    mc->drop();
-}*/
 void myterrain::myShaders(io::path vs, io::path fs, video::IGPUProgrammingServices* gpu,
                             IShaderConstantSetCallBack* mc){
     

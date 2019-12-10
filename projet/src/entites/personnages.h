@@ -7,6 +7,7 @@
 #include <iostream>
 namespace ic = irr::core ;
 namespace is = irr::scene;
+namespace iv = irr::video;
 
 
 
@@ -17,6 +18,8 @@ public:
     Personnages();
     ic::vector3df getPosition();
     ic::vector3df getRotation();
+    void setMesh(is::IAnimatedMesh*);
+    is::IAnimatedMesh* getMesh();
     void run();
     void stand();
     is::IAnimatedMeshSceneNode* node;
@@ -25,6 +28,7 @@ public:
     
 private:
     int pdv;
+    is::IAnimatedMesh* mesh;
 
 
 };

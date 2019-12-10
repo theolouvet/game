@@ -2,37 +2,22 @@
 
 
 
-
-
-
-
-
-
-
-
-
 terrainscene::terrainscene(IrrlichtDevice* device, IShaderConstantSetCallBack* mc):mascene(device){
-    //terrain creation
-
-   
-   
+    //creation de la scene pour le terrain   
     IVideoDriver* driver = device->getVideoDriver();
-    
     const io::path& heightMapFileName = "data/dataterrain/hm2.jpg";
     const io::path& TextureFileName = "data/dataterrain/terrain-texture.jpg";
     io::path vsFileName = "data/dataterrain/terrain.vert"; // filename for the vertex shader
     io::path psFileName = "data/dataterrain/terrain.frag"; // filename for the pixel shader
-    myterrain ter = myterrain();
-    
+    myterrain ter = myterrain();//Creation du terrain
     ter.terrainHM(smgr, heightMapFileName);
     ter.setMaterialFlag(video::EMF_LIGHTING, false);
     ter.setMaterialTexture(0, driver->getTexture(TextureFileName));
-     ter.setMaterialTexture(1, driver->getTexture("data/datawater/stones.jpg"));
-  //  ter.myShaders(vsFileName, psFileName, driver->getGPUProgrammingServices(), &mc);
+    ter.setMaterialTexture(1, driver->getTexture("data/datawater/stones.jpg"));//non utilise a ce jour
     ter.addskybox(smgr, driver);
     ter.createTriangleSelector();
-    //sydney.addcolision(ter.monterrain->getTriangleSelector(), smgr);
     skydome = ter.skydome;
+    selector = ter.getTriangleSelector();
 
     //quad creation
     const io::path& vsquad = "data/datawater/vtest.vert";
@@ -42,69 +27,91 @@ terrainscene::terrainscene(IrrlichtDevice* device, IShaderConstantSetCallBack* m
   
     water.myShaders(vsquad, fsquad, driver->getGPUProgrammingServices(), mc);
 
+
+    bill = 0;
+    core::vector3df waypoint[2];
+	waypoint[0].set(-150,40,100);
+	waypoint[1].set(350,40,100);
+    // create animation for portals;
+    scene::ISceneNodeAnimator* anim = 0;
+	core::array<video::ITexture*> textures;
+	for (s32 g=1; g<8; ++g)
+	{
+		core::stringc tmp("media/portal");
+		tmp += g;
+		tmp += ".bmp";
+		video::ITexture* t = device->getVideoDriver()->getTexture( tmp );
+		textures.push_back(t);
+	}
+
+	anim = smgr->createTextureAnimator(textures, 100);
+	for(int r=0; r<2; ++r)
+	{
+		bill = smgr->addBillboardSceneNode(0, core::dimension2d<f32>(100,100),
+			waypoint[r]+ core::vector3df(0,20,0));
+		bill->setMaterialFlag(video::EMF_LIGHTING, false);
+		bill->setMaterialTexture(0, device->getVideoDriver()->getTexture("media/portal1.bmp"));
+		bill->setMaterialType(video::EMT_TRANSPARENT_ADD_COLOR);
+		bill->addAnimator(anim);
+        bill->setPosition(posPortail);
+	}
+    bill->setDebugDataVisible(is::EDS_BBOX);
+
     
-    keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
-    keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z
-    keyMap[1].Action = irr::EKA_MOVE_BACKWARD; // reculer
-    keyMap[1].KeyCode = irr::KEY_KEY_S;        // s
-    keyMap[2].Action = irr::EKA_STRAFE_LEFT;   // a gauche
-    keyMap[2].KeyCode = irr::KEY_KEY_A;        // a
-    keyMap[3].Action = irr::EKA_STRAFE_RIGHT;  // a droite
-    keyMap[3].KeyCode = irr::KEY_KEY_D;        // d
-    keyMap[4].Action = irr::EKA_JUMP_UP;       // saut
-    keyMap[4].KeyCode = irr::KEY_SPACE;        // barre espace
-    camfree =  smgr->addCameraSceneNodeFPS(
-            0,
-    100,
-    10.0f,
-    -1,
-    0,//keymap
-    5
-    );
-    camfree->setFarValue(30000.0f);
+    
    
     start = std::chrono::system_clock::now();
+}
 
-     device->getFileSystem()->addFileArchive("data/AspecQ3compet2.pk3");
-  //  scene::IAnimatedMesh* q3levelmesh = smgr->getMesh("20kdm2.bsp");
-  scene::IAnimatedMesh* q3levelmesh = smgr->getMesh("AspecQ3compet2.bsp");
-   scene::IMeshSceneNode* q3node = 0;
-
-    // The Quake mesh is pickable, but doesn't get highlighted.
-    if (q3levelmesh)
-        q3node = smgr->addOctreeSceneNode(q3levelmesh->getMesh(0), 0, IDFlag_IsPickable);
-      scene::ITriangleSelector* selector = 0;
-
-    if (q3node)
+void terrainscene::initiateHeros(){
+    heros->node = smgr->addAnimatedMeshSceneNode(heros->getMesh(),0,IDFlag_IsPickable);
+    heros->node->setPosition(initposHeros);
+    ic::vector3df edges[8];
+    heros->node->getTransformedBoundingBox().getEdges(edges);
+    auto boxMaxEdge = heros->node->getTransformedBoundingBox().MaxEdge;
+    ic::vector3df boxCenter = heros->node->getTransformedBoundingBox().getCenter();
+    ic::vector3df ellipseRadius = boxMaxEdge - boxCenter;
+    if (selector)
     {
-        q3node->setPosition(core::vector3df(0,100,0));
-
-        selector = smgr->createOctreeTriangleSelector(
-                q3node->getMesh(), q3node);
-        q3node->setTriangleSelector(selector);
-        // We're not done with this selector yet, so don't drop it.
+        is::ISceneNodeAnimatorCollisionResponse *collision = 
+        smgr->createCollisionResponseAnimator(selector,
+         heros->node,  ellipseRadius, vector3df(0,-10.0f,0));
+        // heros->setMapSelector(metaselector);
+        selector->drop(); 
+        //metaselector->drop();
+        heros->add_animator(collision);
+        collision->drop();  
     }
 
-  
-
+    heros->node->setDebugDataVisible(is::EDS_BBOX);
 }
 
 void terrainscene::draw(){
     smgr->drawAll();
+
     end = std::chrono::system_clock::now();
     t = std::chrono::duration_cast<std::chrono::duration<float>>(start - end).count();
-           if(smgr->getActiveCamera()->getPosition().Y <600.0f){
-            test = 10.0f;
+    if(heros->node != NULL && camq != NULL){
+            if(camq->ActiveId == camq->IdFps)
+                heros->turnright(camq->camFPS->getRotation());
+            camq->updateFPScam(heros->node);
+            camq->updateTPSCam(heros->node);
+    }
+  
+    
+        if(smgr->getActiveCamera()->getPosition().Y <600.0f){
+            fragment = 10.0f;
             alphaw = 0.5f;
         }
         else if(smgr->getActiveCamera()->getPosition().Y >3000.0f){
-            test = 1.0f;
+            fragment = 1.0f;
             alphaw = 1.0f;
         }
         else{
-            test =  10 * (3000.0f - smgr->getActiveCamera()->getPosition().Y)/2400.0f;
+            fragment =  10 * (3000.0f - smgr->getActiveCamera()->getPosition().Y)/2400.0f;
             alphaw = 0.5f + 0.5f * (3000.0f - smgr->getActiveCamera()->getPosition().Y)/2400.0f;
         }
+
     vector3df rot = skydome->getRotation();
     skydome->setRotation(rot + vector3df(0,0.01,0));
 }

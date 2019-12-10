@@ -15,7 +15,7 @@ class myterrain
 private:
     /* data */
 public:
-    myterrain(/* args */);
+    myterrain();
    
     scene::ITerrainSceneNode* monterrain;
     void terrainHM(ISceneManager*,const io::path& );

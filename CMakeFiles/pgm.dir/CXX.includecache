@@ -111,6 +111,8 @@ irrlicht/irrlicht.h
 -
 ../entites/heros.h
 /home/thep/Documents/game/projet/src/entites/heros.h
+../camera/camera.h
+/home/thep/Documents/game/projet/src/camera/camera.h
 
 /home/thep/Documents/game/projet/src/scenes/quake.cpp
 quake.h
