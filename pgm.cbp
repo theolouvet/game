@@ -8,97 +8,113 @@
       <Option virtualFolders="CMake Files\;" />
       <Build>
       <Target title="all">
-         <Option working_dir="/fs03/share/users/romain.biassin/home/Documents/game" />
+         <Option working_dir="/fs03/share/users/theo.louvet/home/game" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="edit_cache">
-         <Option working_dir="/fs03/share/users/romain.biassin/home/Documents/game" />
+         <Option working_dir="/fs03/share/users/theo.louvet/home/game" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 edit_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="pgm">
-         <Option output="/fs03/share/users/romain.biassin/home/Documents/game/pgm" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/fs03/share/users/romain.biassin/home/Documents/game" />
+         <Option output="/fs03/share/users/theo.louvet/home/game/pgm" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/fs03/share/users/theo.louvet/home/game" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
-            <Add directory="/fs03/share/users/romain.biassin/home/Documents/game/projet/src" />
+            <Add directory="/fs03/share/users/theo.louvet/home/game/projet/src" />
             <Add directory="/usr/include/irrlicht" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 pgm" />
-            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 pgm" />
+            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="pgm/fast">
-         <Option output="/fs03/share/users/romain.biassin/home/Documents/game/pgm" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/fs03/share/users/romain.biassin/home/Documents/game" />
+         <Option output="/fs03/share/users/theo.louvet/home/game/pgm" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/fs03/share/users/theo.louvet/home/game" />
          <Option object_output="./" />
          <Option type="1" />
          <Option compiler="gcc" />
          <Compiler>
-            <Add directory="/fs03/share/users/romain.biassin/home/Documents/game/projet/src" />
+            <Add directory="/fs03/share/users/theo.louvet/home/game/projet/src" />
             <Add directory="/usr/include/irrlicht" />
          </Compiler>
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 pgm/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 pgm/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       <Target title="rebuild_cache">
-         <Option working_dir="/fs03/share/users/romain.biassin/home/Documents/game" />
+         <Option working_dir="/fs03/share/users/theo.louvet/home/game" />
          <Option type="4" />
          <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 rebuild_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/romain.biassin/home/Documents/game/Makefile&quot;  VERBOSE=1 clean" />
+            <Build command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/fs03/share/users/theo.louvet/home/game/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
       </Build>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/camera.cpp">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/camera/camera.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/heros.cpp">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/entites/heros.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/main.cpp">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/entites/personnages.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/map/myterrain.cpp">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/main.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/map/waterquad.cpp">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/map/myterrain.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/myeventreceiver.cpp">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/map/qmap.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/personnages.cpp">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/map/waterquad.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/camera.h">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/myeventreceiver.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/heros.h">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/scenes/mascene.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/map/myterrain.h">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/scenes/quake.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/map/waterquad.h">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/scenes/terrainscene.cpp">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/myeventreceiver.h">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/camera/camera.h">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/projet/src/personnages.h">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/entites/heros.h">
       </Unit>
-      <Unit filename="/fs03/share/users/romain.biassin/home/Documents/game/CMakeLists.txt">
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/entites/personnages.h">
+      </Unit>
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/map/myterrain.h">
+      </Unit>
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/map/qmap.h">
+      </Unit>
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/map/waterquad.h">
+      </Unit>
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/myeventreceiver.h">
+      </Unit>
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/scenes/mascene.h">
+      </Unit>
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/scenes/quake.h">
+      </Unit>
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/projet/src/scenes/terrainscene.h">
+      </Unit>
+      <Unit filename="/fs03/share/users/theo.louvet/home/game/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
       </Unit>
    </Project>

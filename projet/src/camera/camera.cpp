@@ -127,7 +127,7 @@ void Camera::updateTPSCam(is::IAnimatedMeshSceneNode* node){
 
 void Camera::updateFPScam(is::IAnimatedMeshSceneNode* node){
 
-    camFPS->setPosition(node->getPosition()+ ic::vector3df(-1.5,25,0));
+    camFPS->setPosition(node->getPosition()+ ic::vector3df(-6.5,25,0));
    
 }
 

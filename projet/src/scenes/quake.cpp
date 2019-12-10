@@ -109,8 +109,14 @@ void quake::draw(){
     if(heros->node != NULL && camq != NULL){
             if(camq->ActiveId == camq->IdFps)
                 heros->turnright(camq->camFPS->getRotation());
+
+
+
+
             camq->updateFPScam(heros->node);
             camq->updateTPSCam(heros->node);
+
+
     }
 
     
