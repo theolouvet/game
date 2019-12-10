@@ -12,7 +12,7 @@ class terrainscene : public mascene
 private:
     /* data */
   
-    ic::vector3df initposHeros = ic::vector3df(4332,1171,-2837);
+    
     ic::vector3df posPortail = ic::vector3df( 4608.09 , 1120.32 , -2720.68);
     IrrlichtDevice *device;
     vector3df ligth = vector3df(-5000,5000,14000);
@@ -35,6 +35,7 @@ public:
     scene::ISceneNode* skydome;
     float fragment = 1.0f;
     float alphaw = 1.0;
+    const static int tId = 201;
 };
 
 

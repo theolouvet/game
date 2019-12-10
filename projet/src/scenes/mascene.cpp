@@ -43,6 +43,10 @@ void mascene::switchFreecam(){
     useFreeCam != useFreeCam;
 }
 
+bool mascene::portalUsed(){
+    return inPortal;
+}
+
 void mascene::initiateFreecam(){
     keyMap[0].Action = irr::EKA_MOVE_FORWARD;  // avancer
     keyMap[0].KeyCode = irr::KEY_KEY_Z;        // Z

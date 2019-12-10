@@ -108,7 +108,7 @@ void Camera::switchcamtype(int type){
 }
 
 void Camera::updateTPSCam(is::IAnimatedMeshSceneNode* node){
-    std::cout<<"4.2"<<std::endl;
+   
     cam->setTarget(node->getPosition());
     ic::vector3df pos = node->getPosition();
     float rot = node->getRotation().Y;

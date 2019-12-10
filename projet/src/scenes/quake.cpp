@@ -7,6 +7,8 @@
 
 
 quake::quake(IrrlichtDevice * device):mascene(device){
+
+    id = qId;
     
     device->getFileSystem()->addFileArchive("data/map_oxodm1.pk3");
   
@@ -57,7 +59,7 @@ quake::quake(IrrlichtDevice * device):mascene(device){
         bill->setPosition(ic::vector3df(62,322.982,1675.53));
 	}
     bill->setDebugDataVisible(is::EDS_BBOX);
-    
+    initposHeros = ic::vector3df(66,322.982,1541.53);
     
         start = std::chrono::system_clock::now();
    
@@ -67,7 +69,7 @@ void quake::initiatedHeros(){
     
     heros->node = smgr->addAnimatedMeshSceneNode(heros->getMesh(),0,IDFlag_IsPickable);
     
-    heros->node->setPosition(ic::vector3df(66,322.982,1541.53));
+    heros->node->setPosition(initposHeros);
     
 
     ITriangleSelector* selector = q3node -> getTriangleSelector();
@@ -97,6 +99,8 @@ void quake::freecamera(){
 }
 
 
+
+
 void quake::draw(){
     smgr->drawAll();
     
@@ -115,7 +119,12 @@ void quake::draw(){
     auto bheros = heros->node->getTransformedBoundingBox();
     if(bbill.intersectsWithBox(bheros)){
         std::cout<<"intersection"<<std::endl;
+        inPortal = true;
+    }else
+    {
+        inPortal = false;
     }
+    
     if(getActiveCamera() != smgr->getActiveCamera()){
         setActiveCamera(smgr->getActiveCamera());
     }

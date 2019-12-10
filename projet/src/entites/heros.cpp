@@ -20,14 +20,15 @@ void Heros::saut(){
 }
 
 void Heros::shoot(){
+    
     is::ISceneManager* sm = node->getSceneManager();
 	is::ICameraSceneNode* camera = sm->getActiveCamera();
-
+    std::cout<<"1.1"<<std::endl;
 	SParticleImpact imp;
 	imp.when = 0;
 
 	// get line of camera
-   
+   /*
 
     auto size = device->getVideoDriver()->getScreenSize();
      ic::vector2df mp = ic::vector2df(mousePostion.X*1.0f, mousePostion.Y*1.0f);
@@ -38,12 +39,11 @@ void Heros::shoot(){
   
  //  d = d/ds;
     float angle = acos((1.0f*mp.X/size.Width)/d) *  180.0f /M_PI;
-    std::cout<<"distance "<<d<<"  "<< 1.0f *mp.X<<" "<<mp.Y<<" "<<angle<<std::endl;
-
+    */
 
 	
 	ic::vector3df start = getPosition();
-	ic::vector3df end = (camera->getTarget() - start)*cos(angle);
+	ic::vector3df end = camera->getTarget() - start;
     
 	end.normalize();
 	start += end*8.0f;
@@ -52,22 +52,32 @@ void Heros::shoot(){
 	ic::triangle3df triangle;
 
 	ic::line3d<irr::f32> line(start, end);
-
+    std::cout<<"1.2"<<std::endl;
 	// get intersection point with map
 	is::ISceneNode* hitNode;
+    
+    if(sm->getSceneCollisionManager() != NULL){
+     std::cout<<"1.211"<<std::endl;
+    
+     
 	if (sm->getSceneCollisionManager()->getCollisionPoint(
 		line, ms, end, triangle, hitNode))
 	{
-		// collides with wall
+		
+        // collides with wall
+        std::cout<<"1.211"<<std::endl;
 		ic::vector3df out = triangle.getNormal();
+        std::cout<<"1.21221"<<std::endl;
 		out.setLength(0.03f);
-
+        std::cout<<"1.2121"<<std::endl;  
 		imp.when = 1;
 		imp.outVector = out;
 		imp.pos = end;
-	}
+         std::cout<<"1.211"<<std::endl;
+    }
 	else
 	{
+        std::cout<<"1.215441"<<std::endl;
 		// doesnt collide with wall
 		ic::vector3df start = camera->getPosition();
 		ic::vector3df end = (camera->getTarget() - start);
@@ -76,14 +86,16 @@ void Heros::shoot(){
 		start += end*8.0f;
 		end = start + (end * camera->getFarValue());
 	}
-
+    std::cout<<"1.21"<<std::endl;
 	// create fire ball
 	is::ISceneNode* node = 0;
 	node = sm->addBillboardSceneNode(0,
 		ic::dimension2d<irr::f32>(25,25), start);
 
 	node->setMaterialFlag(iv::EMF_LIGHTING, false);
+    std::cout<<"1.3"<<std::endl;
 	node->setMaterialTexture(0, sm->getVideoDriver()->getTexture("media/fireball.bmp"));
+    std::cout<<"1.4"<<std::endl;
 	node->setMaterialType(iv::EMT_TRANSPARENT_ADD_COLOR);
 
 	irr::f32 length = (irr::f32)(end - start).getLength();
@@ -108,6 +120,8 @@ void Heros::shoot(){
 		imp.when = device->getTimer()->getTime() + (time - 100);
 		Impacts.push_back(imp);
 	}
+    }
+    
 }
 
 
@@ -151,7 +165,7 @@ void Heros::turnright(ic::vector3df rot){
     node->setRotation(ic::vector3df(0,rot.Y - 90,0));
 }
 
-void Heros::keyreception(MyEventReceiver* receiver){
+void Heros::keyreception(MyEventReceiver* receiver, int id){
 
         if(receiver->IsKeyDown(irr::KEY_KEY_Z)){
                 avancer();
@@ -186,7 +200,14 @@ void Heros::keyreception(MyEventReceiver* receiver){
         }
 
         if(receiver->MouseState.LeftButtonDown){
-            shoot();
+            std::cout<<"1"<<std::endl;
+            try{
+            if(id == 102)
+                shoot();
+            }catch(const std::exception& e){
+                std::cout<<"error tir "<<std::endl;
+            }
+            std::cout<<"2"<<std::endl;
         }
 
        mousePostion = receiver->MouseState.Position; 

@@ -28,14 +28,20 @@ public:
     void setActiveCamera();
     void initiateFreecam();
     void switchFreecam();
+    bool portalUsed();
     bool useFreeCam = false;
     irr::SKeyMap keyMap[5];
     ICameraSceneNode* camfree;
     is::ICameraSceneNode* getActiveCamera();
     Heros* heros;
+    bool inPortal = false;
     ISceneManager* smgr ;
     IrrlichtDevice *dev;
      Camera* camq;
+    ic::vector3df initposHeros;
+    int id;
+
+
     enum
 {
     

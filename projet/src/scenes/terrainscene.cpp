@@ -3,7 +3,8 @@
 
 
 terrainscene::terrainscene(IrrlichtDevice* device, IShaderConstantSetCallBack* mc):mascene(device){
-    //creation de la scene pour le terrain   
+    //creation de la scene pour le terrain  
+    id = tId; 
     IVideoDriver* driver = device->getVideoDriver();
     const io::path& heightMapFileName = "data/dataterrain/hm2.jpg";
     const io::path& TextureFileName = "data/dataterrain/terrain-texture.jpg";
@@ -58,7 +59,7 @@ terrainscene::terrainscene(IrrlichtDevice* device, IShaderConstantSetCallBack* m
     bill->setDebugDataVisible(is::EDS_BBOX);
 
     
-    
+    initposHeros = ic::vector3df(4332,1171,-2837);
    
     start = std::chrono::system_clock::now();
 }
@@ -111,7 +112,18 @@ void terrainscene::draw(){
             fragment =  10 * (3000.0f - smgr->getActiveCamera()->getPosition().Y)/2400.0f;
             alphaw = 0.5f + 0.5f * (3000.0f - smgr->getActiveCamera()->getPosition().Y)/2400.0f;
         }
+    
 
     vector3df rot = skydome->getRotation();
     skydome->setRotation(rot + vector3df(0,0.01,0));
+
+    auto bbill = bill->getTransformedBoundingBox();
+    auto bheros = heros->node->getTransformedBoundingBox();
+    if(bbill.intersectsWithBox(bheros)){
+        std::cout<<"intersection"<<std::endl;
+        inPortal = true;
+    }else
+    {
+        inPortal = false;
+    }
 }

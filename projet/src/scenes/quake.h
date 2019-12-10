@@ -14,12 +14,15 @@ private:
     float dt = -1;
     IMetaTriangleSelector* metaselector;
     scene::IBillboardSceneNode* bill;
+
 public:
     quake():mascene(){};
+    bool portalUsed();
     quake(IrrlichtDevice *);
     void initiatedHeros();
     void draw() override;
     void freecamera();
+    const static int qId = 102;
 };
 
 #endif

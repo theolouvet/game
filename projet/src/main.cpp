@@ -35,8 +35,8 @@ std::map<int,std::pair<mascene*,bool>> scenes;
 
 
 float alphaw = 1.0;
-const static int qId = 102;
-const static int tId = 201;
+
+
 float t;
 
 void switchScenes();
@@ -103,8 +103,8 @@ void keyreception(){
         //cam.switchView();
         drawscene->camq->switchView();
     }
-    sydney.keyreception(&receiver);	
-    sydney2.keyreception(&receiver);        
+    
+        drawscene->heros->keyreception(&receiver, drawscene->id);
         
         if(receiver.IsKeyDown(KEY_KEY_W)){
             device->drop();
@@ -139,7 +139,7 @@ void initiateQuakeScene(bool active){
     cam.initiateFPScam(sydney.node);
     cam.initiateTPScam(sydney.node);
     q.setCam(&cam);
-    scenes.insert(std::make_pair(qId, std::make_pair(&q,active)));
+    scenes.insert(std::make_pair(q.qId, std::make_pair(&q,active)));
     sydney.loadTexture(driver->getTexture("media/sydney.bmp"));
     //q.freecamera(); //utiliser lors du developpement
 }
@@ -155,7 +155,8 @@ void initiateTerrain(bool active){
     cam2.initiateTPScam(sydney2.node);
     terrain.setCam(&cam2);
     ligth = terrain.getligth();
-    scenes.insert(std::make_pair(tId,std::make_pair(&terrain,active)));
+    scenes.insert(std::make_pair(terrain.tId,std::make_pair(&terrain,active)));
+    sydney2.loadTexture(driver->getTexture("media/sydney.bmp"));
 }
 
 //Initialisation de toutes les scenes
@@ -191,6 +192,7 @@ void switchScenes(){
      }
 
      drawscene->setActiveCamera();
+     drawscene->heros->node->setPosition(drawscene->initposHeros);
 
 }
 
@@ -264,7 +266,9 @@ int main()
         drawscene->draw();
         keyreception();
 		driver->endScene();
-        
+        if(drawscene->portalUsed()){
+            switchScenes();
+        }
 		
         int fps = driver->getFPS();
         if (lastFPS != fps)

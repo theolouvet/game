@@ -21,7 +21,7 @@ public:
     void animation(bool);
     void add_animator(irr::scene::ISceneNodeAnimatorCollisionResponse*);
     void shoot();
-    void keyreception(MyEventReceiver*);
+    void keyreception(MyEventReceiver*, int);
     void setMapSelector(is::IMetaTriangleSelector* metaselector);
     void setDevice(irr::IrrlichtDevice* dev);
     irr::scene::ISceneNodeAnimatorCollisionResponse* anim;
